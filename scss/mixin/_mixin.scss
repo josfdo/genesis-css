@@ -1,0 +1,240 @@
+@mixin box-shadow($color) {
+    box-shadow: 0px 7px 20px $color;
+}
+
+// Clean list style
+
+@mixin reset-list-style {
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    ul, ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+@mixin href-default-none {
+    [href] {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+@mixin scrollbar-hidden {
+
+    // Microsoft browser
+    -ms-overflow-style: none;
+
+    // Firefox browser
+    scrollbar-width: none;
+
+    // Chrome, Opera ...
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin disabled-item($color) {
+    color: $color !important;
+    background-color: rgba($color, 0.2) !important;
+    pointer-events: none;
+}
+
+// Button solid
+
+@mixin button-solid($color) {
+    color: #fff !important;
+    background-color: $color !important;
+
+    &:hover {
+        background-color: $color - 20% !important;
+    } 
+}
+
+// Button outline
+
+@mixin button-outline($color) {
+    color: $color !important;
+    border: 1px solid rgba($color,.5) !important;
+
+    &:hover {
+        border-color: $color !important;
+    }
+}
+
+// Button outline/solid
+
+@mixin button-outline-solid($bg-color, $color) {
+    color: $bg-color !important;
+    border: 1px solid rgba($bg-color,.5) !important;
+
+    &:hover {
+        color: $color !important;
+        background-color: $bg-color !important;
+    }
+}
+
+//Dropdown breakpoints 
+
+@mixin dropdown-breakpoint {
+    min-width: 100%;
+    white-space: normal;
+    position: relative;
+    box-shadow: none;
+}
+
+// Focus 
+
+@mixin focus-style {
+    outline: none;
+    border-color: #00b7eb;
+    box-shadow: 0 0 0 .1875rem #9bddff;
+    position: relative;
+}
+
+//Dropdown full-width (dropdown-content) 
+
+@mixin dropdown-full-width {
+    .dropdown-toggle {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content {
+        width: 100%;
+    }
+}
+
+//Item
+
+@mixin item($item-y, $item-x) {
+    display: block;
+    padding: $item-y $item-x;
+}
+
+// Switch ade in css
+
+@mixin switch-fade-in {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s, visibility 1s;
+}
+
+// Switch fade out css
+
+@mixin switch-fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s, visibility .5s;
+}
+
+// Visibility elements
+
+@mixin switch-fade-all-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+// Hover item
+
+@mixin hover-item($hover-color) {
+    transition: background-color var(--transition-default);
+    &:hover {
+        background-color: $hover-color;
+        opacity: 1 !important;
+    }
+}
+
+// Hover opacity
+
+@mixin hover-opacity($opacity) {
+    transition: opacity var(--transition-default);
+    &:hover {
+        opacity: $opacity !important;
+        background-color: transparent !important;
+    }
+}
+
+
+// breakpoint mixin
+
+@mixin breakpoint-min($point) {
+    @if $point == pho-xs {
+        @media screen and (min-width: map-get($breakpoint, pho-xs)) {
+            @content;
+        }
+    }
+
+    @if $point == pho {
+        @media screen and (min-width: map-get($breakpoint, pho)) {
+            @content;
+        }
+    }
+
+    @if $point == pha {
+        @media screen and (min-width: map-get($breakpoint, pha)) {
+            @content;
+        }
+    }
+
+    @if $point == tab {
+        @media screen and (min-width: map-get($breakpoint, tab)) {
+            @content;
+        }
+    }
+
+    @if $point == lap {
+        @media screen and (min-width: map-get($breakpoint, lap)) {
+            @content;
+        }
+    }
+
+    @if $point == des {
+        @media screen and (min-width: map-get($breakpoint, des)) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint-max($point) {
+    @if $point == pho-xs {
+        @media screen and (max-width: map-get($breakpoint, pho-xs)) {
+            @content;
+        }
+    }
+
+    @if $point == pho {
+        @media screen and (max-width: map-get($breakpoint, pho)) {
+            @content;
+        }
+    }
+
+    @if $point == pha {
+        @media screen and (max-width: map-get($breakpoint, pha)) {
+            @content;
+        }
+    }
+
+    @if $point == tab {
+        @media screen and (max-width: map-get($breakpoint, tab)) {
+            @content;
+        }
+    }
+
+    @if $point == lap {
+        @media screen and (max-width: map-get($breakpoint, lap)) {
+            @content;
+        }
+    }
+
+    @if $point == des {
+        @media screen and (max-width: map-get($breakpoint, des)) {
+            @content;
+        }
+    }
+}

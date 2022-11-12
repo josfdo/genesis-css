@@ -1,0 +1,425 @@
+#{$bttn-default} {
+  display: inline-block;
+  padding: $bttn-Y-padding $bttn-X-padding;
+  line-height: $bttn-line-height;
+  margin: $bttn-Y-margin $bttn-X-margin;
+  text-align: center;
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none !important;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: $bttn-radius;
+  box-sizing: border-box;
+  transition: background-color .3s;
+}
+
+.bttn-md {
+  padding: $bttn-md-Y-padding $bttn-X-padding;
+}
+
+.bttn-sm {
+  padding: $bttn-sm-Y-padding $bttn-sm-X-padding;
+  font-size: 13px;
+  line-height: 1;
+  border-radius: .1875em;
+}
+
+.pill {
+  border-radius: 624.9375rem;
+}
+
+.bttn-color {
+  padding-top: .625rem;
+  padding-bottom: .625rem;
+}
+
+.bttn-check {
+  padding: 0;
+  margin: 0;
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
+    position: absolute;
+  }
+
+  input[type="radio"]:checked + label,
+  input[type="checkbox"]:checked + label {
+    color: #000;
+    background-color: $md-grey;
+  }
+
+  input:checked ~ .bttn-color {
+    outline: 3px solid #00b7eb;
+    outline-offset: 1px;
+  }
+
+}
+
+// Buttons solid colors.
+
+.bttn-dark {
+  @include button-solid($dark);
+}
+
+.bttn-primary {
+  @include button-solid($primary);
+}
+
+.bttn-positive {
+  @include button-solid($positive);
+}
+
+.bttn-negative {
+  @include button-solid($negative);
+}
+
+.bttn-light {
+  color: $dark;
+  border-color: $light - 5%;
+  background-color: $light;
+
+  &:hover {
+      background-color: $light - 5%;
+  }
+}
+
+// Buttons outline
+
+.bttn-brd-dark {
+  @include button-outline($dark);
+}
+
+.bttn-brd-primary {
+  @include button-outline($primary);
+}
+
+.bttn-brd-positive {
+  @include button-outline($positive);
+}
+
+.bttn-brd-negative {
+  @include button-outline($negative);
+}
+
+.bttn-brd-light {
+  @include button-outline($light);
+}
+
+// Buttons outline/solid
+
+.bttn-solid-dark {
+  @include button-outline-solid($dark, $white);
+}
+
+.bttn-solid-primary {
+  @include button-outline-solid($primary, $white);
+}
+
+.bttn-solid-positive {
+  @include button-outline-solid($positive, $white);
+}
+
+.bttn-solid-negative {
+  @include button-outline-solid($negative, $white);
+}
+
+.bttn-solid-light {
+  @include button-outline-solid($light, $black);
+}
+
+// Disabled class
+
+.bttn:disabled,
+.disabled {
+  @include disabled-item(#b3b3b3);
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+// Button navbar menu and lines.
+
+.bttn-menu {
+  width: 40px;
+  padding: .25rem;
+  border-radius: $bttn-radius;
+  vertical-align: sub;
+  
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: #778088;
+    display: block;
+    margin: .4375rem auto;
+    border-radius: .625rem;
+    transition: width .3s;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bttn-menu-white {
+  & > .line {
+    background-color: $white;
+  }
+}
+
+.bttn-menu-black {
+  & > .line {
+    background-color: $black;
+  }
+}
+
+// Button navbar menu, lines activation.
+
+.bttn-menu-active .line:nth-child(1){
+  width: 15px;
+}
+
+.bttn-menu-active .line:nth-child(3){
+  width: 15px;
+}
+
+// Inline buttons and checkboxes buttons
+
+.bttn-group{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .bttn-unified {
+    position: relative;
+    flex-grow: 1;
+    text-align: center;
+ 
+
+    input[type="radio"]:checked + label,
+    input[type="checkbox"]:checked + label {
+      color: #000;
+      background-color: $md-grey;
+    }
+
+    & .bttn {
+      width: 100%;
+      margin: 0;
+      color: #485260;
+      border-radius: 0;
+      background-color: $light;
+    }
+
+  }
+
+  .bttn-align,.bttn-check {
+    flex-grow: 1;
+    margin-left: $bttn-Y-margin;
+    margin-right: $bttn-Y-margin;
+
+    & .bttn {
+      width: 100%;
+    }
+  }
+}
+
+.bttn-unified, .bttn-align, .bttn-check, .checkboxes-outline-bottom {
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
+    position: absolute;
+  }
+}
+
+// Checkboxes border bottom
+
+.checkboxes-outline-bottom {
+
+  & .bttn {
+    opacity: .7;
+    border-width: 0 0 1px 0;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+   
+  }
+
+  input[type="radio"]:checked + label,
+  input[type="checkbox"]:checked + label {
+    border-color: $dark;
+    opacity: 1;
+  }
+
+}
+
+// Add border radius the ends of the first and last button.
+
+.bttn-group-radius {
+
+  .bttn-unified {
+    &:first-of-type {
+      & .bttn {
+        border-radius: $bttn-radius 0 0 $bttn-radius;
+      }
+    }
+
+    &:last-of-type {
+      & .bttn {
+        border-radius: 0 $bttn-radius $bttn-radius 0;
+      }
+    }
+  }
+}
+
+// 
+
+
+@each $key, $value in map-remove($buttons, "light") {
+
+  .checkboxes-solid-#{$key} {
+    & .bttn {
+      color: invert(#000) !important;
+      border-color: $value - 7% !important;
+      background-color: $value !important;
+    }
+
+    input:checked + label {
+      background-color: rgba($value,.7) !important;
+      color: invert(#000) !important;
+    }
+  }
+
+  .checkboxes-outline-#{$key} {
+
+    & .bttn {
+        color: $value !important;
+        border-color: $value - 10% !important;
+        background-color: white !important;
+    }
+
+    input:checked + label {
+        background-color: $value !important;
+        color: invert(#000) !important;
+    }
+  }
+}
+
+// Full colors
+
+@each $key, $value in $buttons {
+
+  .bttn-check {
+
+    input:checked ~ .bttn-#{$key}, 
+    input:checked ~ .bttn-brd-#{$key} {
+      color: #000 !important;
+      border-color: transparent !important;
+      background-color: $md-grey !important;
+    }
+  }
+
+}
+
+// Checkboxes outline white
+
+.checkboxes-outline-white {
+  & .bttn {
+    border-color: #fff !important
+  }
+}
+
+// Chekboxes outline bottom, excluded colors.
+
+@each $key, $value in map-remove($buttons, "light", "dark") {
+
+  .outline-bottom-#{$key} {
+
+    input[type="radio"]:checked + label,
+    input[type="checkbox"]:checked + label {
+      color: $value !important;
+      border-color: $value !important;
+      opacity: 1;
+    }
+  }
+
+}
+
+
+// Controls slide gallery
+
+.control-box-next, .control-box-prev {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  color: #fff;
+}
+
+.control-box-next {
+  right: 0;
+
+  .control-next {
+    border-radius: 5px 0 0 5px;
+  }
+}
+
+.control-box-prev {
+  left: 0;
+  
+  .control-prev {
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+.control-next, .control-prev {
+  width: 100%;
+  height: 70px;
+  padding: 0 .25rem;
+  background-color: rgba(0,0,0,.3);
+  backdrop-filter: blur(7px);
+}
+
+// Iconos
+
+.icon-close, .icon-navbar-toggle {
+  vertical-align: middle;
+  display: inline-block;
+  background-color: currentColor;
+  opacity: .7;
+  transition: opacity .3s;
+  
+  &:hover {
+      opacity: 1;
+  }
+}
+
+.icon-close {
+  width: 1.25rem;
+  height: 1.25rem;
+  @include breakpoint-max(tab) {
+      width: 1.5rem;
+      height: 1.5rem;
+  }
+
+  mask: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath d='M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z'%3e%3c/path%3e%3c/svg%3e")
+  center/cover;
+}
+
+.icon-navbar-toggle {
+  width: 32px;
+  height: 32px;
+  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M16 5H0V4h16v1zm0 8H0v-1h16v1zm0-4.008H0V8h16v.992z"%2F%3E%3C%2Fsvg%3E')
+  center/cover;
+}

@@ -1,0 +1,52 @@
+// Slide up
+
+.animation-slide-up {
+    animation: $animation-slide-up .4s ease-in;
+}
+
+@keyframes slide-up {
+    0% {
+      opacity: 0.5;
+        transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Zoom
+
+.animation-zoom {
+    animation: $animation-zoom .3s ease-in;
+}
+
+@keyframes zoom {
+    
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// Smooth
+
+.animation-smooth{
+    animation: $animation-smooth .4s ease-in;
+}
+
+@keyframes smooth {
+    
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

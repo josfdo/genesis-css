@@ -1,0 +1,93 @@
+@import "../vendor/rfs";
+
+$value: $spacing-level-one;
+
+$margin-x:(
+    me: "margin-right",
+    ms: "margin-left"
+);
+
+.m-auto {
+    margin: auto !important;
+}
+
+
+@each $key, $value in $margin-x {
+    
+    .mx-auto,
+    .#{$key}-auto {
+        #{$value}: auto !important;
+    }
+}
+
+// Margins for breakpoint.
+
+@for $i from 0 through 5 {
+
+    .m-#{$i}{
+        margin: $i * $value !important;
+    }
+    
+    .mx-#{$i},
+    .ms-#{$i}{
+        margin-left: $i * $value !important;
+    }
+    
+    .mx-#{$i},
+    .me-#{$i}{
+        margin-right: $i * $value !important;
+    }
+    
+
+    .my-#{$i},
+    .mt-#{$i}{
+        margin-top: $i * $value !important;
+    }
+    
+    .my-#{$i},
+    .mb-#{$i}{
+        margin-bottom: $i * $value !important;
+    }
+} 
+
+
+// Special margins.
+
+.my-sm, .mt-sm {
+    @include margin-top(50px !important);
+}
+
+.my-sm, .mb-sm {
+    @include margin-bottom(50px !important);
+}
+
+
+.my-md, .mt-md {
+    @include margin-top(100px !important);
+}
+
+.my-md, .mb-md {
+    @include margin-bottom(100px !important);
+}
+
+.my-lg, .mt-lg {
+    @include margin-top(150px !important);
+}
+
+.my-lg, .mb-lg {
+    @include margin-bottom(150px !important);
+}
+
+// Clear margins in breakpoint
+
+@include breakpoint-max(tab) {
+    .mobile-device-my-0, .tab-my-0 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .mobile-device-mx-0, .tab-mx-0 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}

@@ -1,0 +1,237 @@
+// Floats.
+
+.float-end {
+    float: right !important;
+}
+
+.float-start {
+    float: left !important;
+}
+
+.float-none {
+    float: none !important;
+}
+
+// Position
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+// Overflow class properties.
+
+.oflow-hidden {
+    overflow: hidden;
+}
+
+.oflow-auto {
+    overflow: auto;
+}
+
+.oflow-x-auto {
+    overflow-x: auto;
+}
+
+.oflow-y-auto {
+    overflow-y: auto;
+}
+
+// Scrollbar hidden
+
+.scrollbar-hidden {
+    @include scrollbar-hidden;
+}
+
+@include breakpoint-max(tab) {
+    .mobile-device-scrollbar-hidden {
+        @include scrollbar-hidden;
+    }
+}
+
+// Mobile device visible
+
+@include breakpoint-min(tab) {
+    .mobile-device-visible {
+        display: none !important;
+    }
+}
+
+// Mobile device hidden
+
+@include breakpoint-max(tab) {
+    .mobile-device-hidden {
+        display: none !important;
+    }
+
+    .control-slide-mobile-device-hidden {
+
+        [data-control] {
+            display: none !important;
+        }
+    }
+}
+
+// Class for cursor.
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+// Opacity 
+
+.opacity-1 {
+    opacity: .3;
+}
+
+.opacity-2 {
+    opacity: .5;
+}
+
+.opacity-3 {
+    opacity: .7;
+}
+
+// Hover background and opacity
+
+.hover-item {
+    @include hover-item(var(--hover-item));
+}
+
+.hover-item-link {
+    [href] {
+        @include hover-item(var(--hover-item));
+    }
+}
+
+.hover-opacity {
+    @include hover-opacity(.7);
+}
+
+.hover-opacity-link {
+    [href] {
+        @include hover-opacity(.7);
+    }
+}
+
+.reverse-link-opacity {
+    [href] {
+        opacity: .7;
+        transition: opacity var(--transition-default);
+
+        &:hover {
+            opacity:  1 !important;
+        }
+    }
+}
+
+// Backdrop 
+
+.backdrop {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s, visibility .3s;
+    background-color: var(--backdrop-dark);
+}
+
+.backdrop-locked {
+    visibility: visible;
+    opacity: 1;
+}
+
+// Object-fit 
+
+.obj-fill {
+    object-fit: fill;
+}
+
+.obj-contain {
+    object-fit: contain;
+}
+
+.obj-cover {
+    object-fit: cover;
+}
+
+.obj-scale-down {
+    object-fit: scale-down;
+}
+
+.obj-none {
+    object-fit: none;
+}
+
+// Iframe 
+
+.box-iframe {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+    overflow: hidden;
+
+    .iframe {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+// Box shadow
+
+.shadow {
+    @include box-shadow(rgba(0,0,0, .1));
+}
+
+.shadow-1 {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
+    0 2px 2px rgba(0,0,0,0.1), 
+    0 4px 4px rgba(0,0,0,0.1), 
+    0 8px 8px rgba(0,0,0,0.1),
+    0 16px 16px rgba(0,0,0,0.1);
+}
+
+.shadow-2 {
+    box-shadow: 0 5px 10px 0 rgba(90, 116, 148, 0.3);
+}
+
+.shadow-3 {
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.3);
+}
+
+.shadow-none {
+    box-shadow: none !important;
+}

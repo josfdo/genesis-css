@@ -1,0 +1,192 @@
+// Border width
+
+.brd-1 {
+    border-width: 1px;
+}
+
+.brd-2 {
+    border-width: 2px;
+}
+
+.brd-3 {
+    border-width: 3px;
+}
+
+.brd-1, .brd-2, .brd-3 {
+    border-color: $grey;
+    border-style: solid;
+}
+
+// Border color
+
+@each $key, $value in $border-colors {
+
+    .brd-#{$key} {
+        border-color: $value;
+    }
+}
+
+.brd-none {
+    border: none !important;
+}
+
+// Radius
+
+.radius {
+    border-radius: $bttn-radius;
+}
+
+.radius-1 {
+    border-radius: $radius-1;
+}
+
+.radius-2 {
+    border-radius: $radius-2;
+}
+
+.radius-3 {
+    border-radius: $radius-3;
+}
+
+// Radius start
+
+.radius-start {
+    border-radius: $bttn-radius 0 0 $bttn-radius;
+}
+
+.radius-start-1 {
+    border-radius: $radius-1 0 0 $radius-1;
+}
+
+.radius-start-2 {
+    border-radius: $radius-2 0 0 $radius-2;
+}
+
+.radius-start-3 {
+    border-radius: $radius-3 0 0 $radius-3;
+}
+
+// Radius end
+
+.radius-end {
+    border-radius: 0 $bttn-radius $bttn-radius 0;
+}
+
+.radius-end-1 {
+    border-radius: 0 $radius-1 $radius-1 0;
+}
+
+.radius-end-2 {
+    border-radius: 0 $radius-2 $radius-2 0;
+}
+
+.radius-end-3 {
+    border-radius: 0 $radius-3 $radius-3 0;
+}
+
+// Radius top
+
+.radius-top {
+    border-radius: $bttn-radius $bttn-radius 0 0;
+}
+
+.radius-top-1 {
+    border-radius: $radius-1 $radius-1 0 0;
+}
+
+.radius-top-2 {
+    border-radius: $radius-2 $radius-2 0 0;
+}
+
+.radius-top-3 {
+    border-radius: $radius-3 $radius-3 0 0;
+}
+
+// Radius bottom
+
+.radius-bottom {
+    border-radius: 0 0 $bttn-radius $bttn-radius;
+}
+
+.radius-bottom-1 {
+    border-radius:  0 0 $radius-1 $radius-1;
+}
+
+.radius-bottom-2 {
+    border-radius: 0 0 $radius-2 $radius-2;
+}
+
+.radius-bottom-3 {
+    border-radius: 0 0 $radius-3 $radius-3;
+}
+
+// Radius none
+
+.radius-none {
+    border-radius: 0 !important;
+}
+
+// Border group 
+
+.brd-group, .brd-group-middle, .brd-group-full {
+    border: 1px solid $grey;
+
+    .brd {
+        display: inline-block;
+        width: 100%;
+        padding: .5rem 1rem;
+        border-bottom: 1px solid $grey;
+
+        :first-child {
+            border-top: 0;
+        }
+    }
+
+    :last-child {
+        .brd {
+            border-bottom: 0;
+        }
+    }
+}
+
+.brd-group {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+}
+
+.brd-group-middle {
+    border-width: 0 0 0 0;
+}
+
+// Circles
+
+.circle-lg, .circle-md, .circle-sm, .circle-xs {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.circle-lg {
+    min-width: 5rem;
+    max-width: 5rem;
+    height: 5rem;
+}
+
+.circle-md {
+    min-width: 57px;
+    max-width: 57px;
+    height: 57px;
+}
+
+.circle-sm {
+    min-width: 48px;
+    max-width: 48px;
+    height: 48px;
+}
+
+.circle-xs {
+    min-width: 35px;
+    max-width: 35px;
+    height: 35px;
+}

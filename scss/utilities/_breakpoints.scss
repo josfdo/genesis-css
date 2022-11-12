@@ -1,0 +1,57 @@
+@media screen and (min-width: map-get($breakpoint, pho-xs)) {
+    .pho-xs {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoint, pho)) {
+    
+    @for $i from 1 through 12 {
+
+        #{$phone}#{$i * 1} {
+            width: $i * 8.33%;
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoint, pha)) {
+    
+    @for $i from 1 through 12 {
+
+        #{$phablet}#{$i * 1} {
+            width: $i * 8.33%;
+        }
+    }
+
+}
+
+@media screen and (min-width: map-get($breakpoint, tab)) {
+    
+    @for $i from 1 through 12 {
+
+        #{$tablet}#{$i * 1} {
+            width: $i * 8.33%;
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoint, lap)) {
+    
+    @for $i from 1 through 12 {
+
+        #{$laptop}#{$i * 1} {
+            width: $i * 8.33%;
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoint, des)) {
+    
+    @for $i from 1 through 12 {
+
+        #{$desktop}#{$i * 1} {
+            width: $i * 8.33%;
+        }
+    }
+}
+

@@ -1,0 +1,110 @@
+.w-0 {
+    width: 0 !important;
+}
+
+.w-auto {
+    width: auto !important;
+}
+
+// Widths percent.
+
+.w20 {
+    width: 20% !important; 
+}
+
+.w25 {
+    width: 25% !important; 
+}
+
+.w75 {
+    width: 75% !important; 
+}
+
+.w50 {
+    width: 50% !important;
+}
+
+.w100 {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+
+// Heights percents
+
+.h100 {
+    height: 100% !important;
+}
+
+//Heights 50 > 100 
+
+.h-0 {
+    height: 0 !important;
+}
+
+@for $i from 5 through 10 {
+
+    .h-#{$i * 10}{
+        height: $i * 10px;
+    }
+}
+
+// Height. 200 > 500
+
+@for $i from 2 through 3 {
+
+    .h-#{$i * 100}{
+        height: $i * 100px;
+    }
+}
+
+
+// Widths pixels. 50 > 100
+
+@for $i from 5 through 10 {
+
+    .mmw-#{$i * 10}{
+        min-width: $i * 10px;
+        max-width: $i * 10px;
+    }
+}
+
+// Widths pixels. 200 > 500
+
+@for $i from 2 through 3 {
+
+    .mmw-#{$i * 100}{
+        min-width: $i * 100px;
+        max-width: $i * 100px;
+    }
+}
+
+
+// Max-width pixels. 100 > 1200
+
+@for $i from 1 through 12 {
+
+    .maxw-#{$i* 100}{
+        max-width: $i * 100px;
+    }
+}
+
+// Percent and break-points
+
+@include breakpoint-max(tab) {
+    .tab-w100 {
+        width: 100% !important;
+    }
+}
+
+@include breakpoint-max(pha) {
+    .pha-w100 {
+        width: 100% !important;
+    }
+}
+
+@include breakpoint-max(pho) {
+    .pho-w100 {
+        width: 100% !important;
+    }
+}

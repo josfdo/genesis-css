@@ -1,0 +1,93 @@
+.d-fx {
+    display: flex;
+}
+
+// Flex-wrap.
+
+.fx-wrap {
+    flex-wrap: wrap !important;
+}
+
+.fx-row-wrap {
+    flex-flow: row wrap !important;
+}
+
+// Align-items.
+
+.align-items-center {
+    align-items: center !important;
+}
+
+// Justify-content.
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+
+.justify-content-btw {
+    justify-content: space-between !important;
+}
+
+.justify-content-around {
+    justify-content: space-around !important;
+}
+
+// Flex-row.
+
+.fx-row {
+    flex-direction: row;
+}
+
+.fx-row-reverse {
+    flex-direction: row-reverse;
+}
+
+// Flex-column.
+
+.fx-column {
+    flex-direction: column !important;
+}
+
+.fx-column-reverse {
+    flex-direction: column-reverse !important;
+}
+
+// Flex-column breakpoint.
+
+@include breakpoint-max(tab) {
+    .tab-fx-column {
+        flex-direction: column !important;
+    }
+
+    .tab-fx-column-reverse {
+        flex-direction: column-reverse !important;
+    }
+}
+
+@include breakpoint-max(pha) {
+    .pha-fx-column {
+        flex-direction: column !important;
+    }
+
+    .pha-fx-column-reverse {
+        flex-direction: column-reverse !important;
+    }
+}
+
+@include breakpoint-max(pho) {
+    .pho-fx-column {
+        flex-direction: column !important;
+    }
+
+    .pho-fx-column-reverse {
+        flex-direction: column-reverse !important;
+    }
+}

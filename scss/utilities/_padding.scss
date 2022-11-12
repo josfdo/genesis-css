@@ -1,0 +1,116 @@
+@import "../vendor/rfs";
+
+$value: $spacing-level-one;
+
+// Paddings in breakpoint.
+
+@for $i from 0 through 5 {
+
+    .p-#{$i}{
+        padding: $i * $value !important;
+    }
+    
+    .px-#{$i},
+    .ps-#{$i}{
+        padding-left: $i * $value !important;
+    }
+    
+    .px-#{$i},
+    .pe-#{$i}{
+        padding-right: $i * $value !important;
+    }
+    
+
+    .py-#{$i},
+    .pt-#{$i}{
+        padding-top: $i * $value !important;
+    }
+    
+    .py-#{$i},
+    .pb-#{$i}{
+        padding-bottom: $i * $value !important;
+    }
+} 
+
+// Specials paddings.
+
+.py-sm {
+    @include padding-top(50px);
+    @include padding-bottom(50px);
+}
+
+.py-md {
+    @include padding-top(100px);
+    @include padding-bottom(100px);
+}
+
+.py-lg {
+    @include padding-top(150px);
+    @include padding-bottom(150px);
+}
+
+.py-xl {
+    @include padding-top(200px);
+    @include padding-bottom(200px);
+}
+
+.py-xl {
+    @include padding-top(250px);
+    @include padding-bottom(250px);
+}
+
+//
+
+.py-sm, .pt-sm {
+    @include padding-top(50px);
+}
+
+.py-sm, .pb-sm {
+    @include padding-bottom(50px);
+}
+
+.py-md, .pt-md {
+    @include padding-top(100px);
+}
+
+.py-md, .pb-md {
+    @include padding-bottom(100px);
+}
+
+.py-lg, .pt-lg {
+    @include padding-top(150px);
+}
+
+.py-lg, .pb-lg {
+    @include padding-bottom(150px);
+}
+
+.py-xl, .pt-xl{
+    @include padding-top(200px);
+}
+
+.py-xl, .pb-xl{
+    @include padding-bottom(200px);
+}
+
+.py-xxl, .pt-xxl{
+    @include padding-top(250px);
+}
+
+.py-xxl, .pb-xxl{
+    @include padding-bottom(250px);
+}
+
+// Clear margins in breakpoint
+
+@include breakpoint-max(tab) {
+    .mobile-device-py-0 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .mobile-device-px-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}

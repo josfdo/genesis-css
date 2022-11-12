@@ -1,0 +1,41 @@
+// Item class properties.
+
+.item {
+    display: block;
+    padding: .5rem $bttn-X-padding;
+    margin: .125rem;
+    white-space: nowrap;
+}
+
+// Utilities item 
+
+.item-group-column, .item-group-row {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+//
+
+.item-group-column {
+    flex-direction: column;
+
+    .item-column {
+        .item {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.item-group-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .item-row {
+        .item {
+            padding-left: 0;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+/*!
+Genesis CSS v1.0.0
+Author: Fernando Vázquez
+Website https://genesiscss.com/
+Licensed under MIT: https://github.com/josfdo/genesis-css/blob/main/LICENSE
+Twitter: @josfdo_
+GitHub: https://github.com/josfdo
+Copyright Genesis CSS 2022
+*/
+
+// Note: Using rfs -> _font.scss / _margin.scss / _padding.scss
+
+@import "variables/variables";
+@import "mixin/mixin";
+
+@import "utilities/settings";
+@import "utilities/reset_class";
+
+@import "utilities/item";
+@import "utilities/grid";
+@import "utilities/form";
+@import "utilities/align";
+@import "utilities/margin";
+@import "utilities/flex";
+@import "utilities/font";
+@import "utilities/button";
+@import "utilities/accordion";
+@import "utilities/display";
+@import "utilities/table";
+@import "utilities/border";
+@import "utilities/navbars";
+@import "utilities/padding";
+@import "utilities/sizing";
+@import "utilities/list";
+@import "utilities/dropdown";
+@import "utilities/modal";
+@import "utilities/keyframes";
+@import "utilities/message";
+@import "utilities/pagination";
+@import "utilities/card";
+@import "utilities/colors";
+@import "utilities/breakpoints";
+@import "utilities/icons";
+@import "utilities/gallery";
+@import "utilities/events_js";
+@import "utilities/utilities";
+

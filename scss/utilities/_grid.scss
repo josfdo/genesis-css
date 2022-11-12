@@ -1,0 +1,82 @@
+// Containers.
+
+.container-expand {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;  
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: $spacing-level-five $spacing-level-two;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+
+    @include breakpoint-max(lap) {
+        padding: $spacing-level-five $spacing-level-two;
+    }
+}
+
+// Rows.
+
+.row { 
+    width: 100%;
+    margin: 2.5rem auto !important;
+} 
+
+// Clear-fix.
+
+.row:after,
+.container:after {
+    clear: both;
+    display: table;
+    content: "";
+}
+
+// Columns.
+
+.col {
+    float: left;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+// Columns settings.
+
+.cols-sm {
+    .col {
+        padding: 0.5rem;
+    }
+}
+
+// Settings images in columns.
+
+[class*="col"],
+[class*="col-"] {
+    img {
+        width: 100%;
+    }
+}
+
+// Grid auto-fill 
+
+.auto-fill-sm, .auto-fill-md {
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+
+.auto-fill-sm {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.auto-fill-md {
+
+    @media screen and (min-width:330px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+

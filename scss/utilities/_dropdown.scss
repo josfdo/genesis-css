@@ -1,0 +1,112 @@
+// Dropdown class properties.
+
+.dropdown {
+    position: relative;
+
+    .dropdown-content {
+        min-width: 200px;
+        padding: .5rem;
+        white-space: wrap;
+        position: absolute;
+        z-index: 1020;
+        border-radius: $bttn-radius;
+        box-sizing: border-box;
+        background-color: #fff;
+        display: none;
+        @include box-shadow(rgba(0,0,0,.1));
+        border: 1px solid rgba(0, 0, 0, .1);
+
+        .item {
+            width: 100%;
+            padding: .5rem;
+            text-align: left;
+            color: inherit;
+        }
+
+        .multi-level {
+        
+            .multi-level-content {
+                position: relative;
+                padding-left: .5rem;
+                display: none;
+            }
+        }
+    }
+}
+
+// Full width
+
+.dropdown-full {
+    width: 100%;
+
+    @include dropdown-full-width;
+}
+    
+// Full width breakpoints
+
+@include breakpoint-max(tab) {
+    .tab-dropdown-full {
+        width: 100%;
+        @include dropdown-full-width;
+    }
+    
+    .dropdown-mobile-collapse {
+        .dropdown-content {
+            position: relative;
+            box-shadow: none;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+@include breakpoint-max(pha) {
+    .pha-dropdown-full {
+        width: 100%;
+        @include dropdown-full-width;
+    }
+}
+
+@include breakpoint-max(pho) {
+    .pho-dropdown-full {
+        width: 100%;
+        @include dropdown-full-width;
+    }
+}
+
+// Menu in block
+
+.dropdown-collapse {
+    .dropdown-content {
+        min-width: 100%;
+        white-space: normal;
+        position: relative;
+        box-shadow: none;
+    }
+}
+
+// Menu in block breakpoints
+
+@include breakpoint-max(pho) {
+    .pho-dropdown-collapse {
+        .dropdown-content {
+            @include dropdown-breakpoint;
+        }
+    }
+}
+
+@include breakpoint-max(pha) {
+    .pha-dropdown-collapse {
+        .dropdown-content {
+            @include dropdown-breakpoint;
+        }
+    }
+}
+
+@include breakpoint-max(tab) {
+    .tab-dropdown-collapse {
+        .dropdown-content {
+            @include dropdown-breakpoint;
+        }
+    }
+}

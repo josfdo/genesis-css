@@ -1,0 +1,26 @@
+// Clean default style href
+
+.navbar-content, 
+.dropdown, 
+.pagination {
+
+    @include href-default-none;
+}
+
+// Clean default style list
+
+.navbar-content, 
+.dropdown, 
+.auto-fill-sm, 
+.auto-fill-md, 
+.gallery-slide {
+
+    @include reset-list-style;
+}
+
+// Scrollbar hidden
+
+.gallery-box, 
+.gallery-slide {
+    @include scrollbar-hidden;
+}

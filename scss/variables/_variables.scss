@@ -1,0 +1,229 @@
+:root {
+
+    // background color lighter
+
+    --bg-lighter-primary: #f2fbff;
+    --bg-lighter-positive: #f2fdf2;
+    --bg-lighter-warning: #fffaeb;
+    --bg-lighter-negative: #ffeded;
+    --bg-lighter-light: #f6f7fa;
+    --bg-lighter-black: #1a1a1a;
+
+    // font color lighter
+
+    --font-lighter-primary: #194553;
+    --font-lighter-positive: #0e5d0e;
+    --font-lighter-warning: #4d3d00;
+    --font-lighter-negative: #660000;
+    --font-lighter-light: #5a6a72;
+    --font-lighter-black: #fff;
+
+    // border color lighter
+
+    --border-lighter-primary: #d1e8ed;
+    --border-lighter-positive: #d2e1cb;
+    --border-lighter-warning: #d7d1c3;
+    --border-lighter-negative: #dbbebe;
+    --border-lighter-light: #c9cdcf;
+    --border-lighter-black: #000;
+
+    // backdrop dark 
+
+    --backdrop-dark: rgba(0,0,0,.5);
+
+    // hover
+
+    --hover-item: rgba(204,204,204,.2); 
+
+    // Placeholder 
+
+    --placeholder: rgba(73,90,105,.6);
+
+    // Color file selector button
+
+    --color-file-selector-button: rgb(73,90,105);
+
+    // transition default
+
+    --transition-default: .2s ease-in-out;
+
+    // spacing 
+
+    --spacer-one: .5rem;
+    --spacer-two: 1rem;
+    --spacer-three: 1.5rem;
+    --spacer-four: 2rem;
+    --spacer-five: 2.5rem;
+
+    //Sidebar sizing
+
+    --sidebar-width: 18.75rem;
+}
+
+// Breakpoints
+
+$breakpoint: (
+    pho-xs: 550px, //screen small mobile
+    pho: 550px, // screen mobile 550px
+    pha: 770px, //screen phablet 750px
+    tab: 990px, //screen tablet 990px
+    lap: 1200px, //screen laptop 1200px
+    des: 1400px //screen desktop 1400px
+);
+
+// Breakpoint class name
+
+$pho-xs: ".pho-xs";
+$phone: ".pho-";
+$phablet: ".pha-";
+$tablet: ".tab-";
+$laptop: ".lap-";
+$desktop: ".des-";
+
+// Full colors
+
+$primary: #167DB1;
+$positive: #2d8655;
+$negative:#dd3636;
+$muted: #e5ebf0;
+$light: #f6f7fa;
+$grey: #b7c2cc;
+$md-grey:#d3dae1;
+$dark: #3f4e5a;
+$cloud: #fafbfd;
+$mist: #fbfdfe;
+$white: #fff;
+$black: #1a1a1a;
+$link-color: #0070b8;
+
+$full-colors: (
+    "primary": $primary,
+    "positive": $positive,
+    "negative": $negative,
+    "muted": $muted,
+    "light": $light,
+    "grey": $grey,
+    "mdgrey": $md-grey,
+    "dark": $dark,
+    "cloud": $cloud,
+    "mist": $mist,
+    "white": $white,
+    "black": $black
+);
+
+//Usage only buttons
+
+$buttons: (
+    "primary": $primary,
+    "positive": $positive,
+    "negative": $negative,
+    "dark": $dark,
+    "light": $light
+);
+
+//usage in fonts and border
+
+$text-colors: (
+    "primary": $primary,
+    "positive": $positive,
+    "negative": $negative,
+    "muted": $muted,
+    "grey": $grey,
+    "mdgrey": $md-grey,
+    "dark": $dark,
+    "white": $white,
+    "black": $black
+);
+
+// Border colors 
+
+$border-colors: (
+    "muted": $muted,
+    "grey": $grey,
+);
+
+// Border-radius
+
+$radius-1: .625rem;
+$radius-2: 1rem;
+$radius-3: 1.5625rem;
+
+// Values margins, paddings, navbar...
+
+$spacing-level-one: .5rem;
+$spacing-level-two: 1rem;
+$spacing-level-three: 1.5rem;
+$spacing-level-four: 2rem;
+$spacing-level-five: 2.5rem;
+
+// Fonts properties and tags/class
+
+$letter-spacing-default: .1rem;
+
+$font-size-h1: 2rem;
+$font-size-h2: 1.375rem;
+$font-size-h3: 1.17rem;
+$font-size-h4: 0.9375rem;
+$font-size-h5: 0.83rem;
+$font-size-h6: .67rem;
+
+$native-h-tag: "h1, h2, h3, h4, h5, h6";
+$h-class: ".h1, .h2, .h3, .h4, .h5, .h6";
+$display-font: ".f6, .f7, .f8, .f9, .f10, .f11, .f12";
+
+// Buttons type
+
+$bttn-default: (
+    ".bttn",
+    ".bttn-md",
+    ".bttn-sm",
+    ".bttn-color",
+    ".bttn-check"
+);
+
+// Standard button
+
+$bttn-Y-padding:  .5rem;
+$bttn-X-padding: 1rem;
+$bttn-line-height: 1.5;
+$bttn-Y-margin: 0.1875rem;
+$bttn-X-margin: 0;
+
+// Middle button
+
+$bttn-md-Y-padding: .25rem;
+$bttn-md-X-padding: $bttn-X-padding;
+
+// Small button
+$bttn-sm-Y-padding: .4rem;
+$bttn-sm-X-padding: .4rem;
+
+// Radius bttn
+
+$bttn-radius: .25rem;
+
+
+// Form
+$field-Y-margin: $bttn-Y-margin;
+$field-X-margin: $bttn-X-margin;
+
+
+// Form class
+
+$form-item-label: "label";
+$form-item-field: "input", "select", "checkbox", "radio", "textarea";
+
+// Orientation
+
+$orientation:(
+    "top",
+    "bottom",
+    "left",
+    "right"
+);
+
+// KEYFRAMES
+
+$animation-slide-up: "slide-up";
+$animation-zoom: "zoom";
+$animation-smooth: "smooth";

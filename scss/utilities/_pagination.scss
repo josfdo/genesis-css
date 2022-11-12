@@ -1,0 +1,57 @@
+.pagination {
+  display: inline-flex;
+  padding: 0;
+  margin: 2px 0;
+  list-style-type: none;
+  border-radius: $bttn-radius;
+
+  .pagination-item,
+  .pagination-control {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .pagination-control {
+    &:first-child {
+      border-radius: $bttn-radius 0 0 $bttn-radius;
+    }
+    &:last-child {
+      border-radius: 0 $bttn-radius $bttn-radius 0;
+    }
+  }
+}
+
+// Effects hover
+
+.pagination-bg-hover {
+
+  .pagination-item,
+  .pagination-control {
+    transition: background-color .3s;
+    
+    &:hover {
+      background-color: rgba(#8c8c8c, 0.5);
+    }
+  }
+
+}
+
+.pagination-bold-hover {
+
+  .pagination-item,
+  .pagination-control {
+
+    &:hover {
+      font-weight: bolder;
+    }
+  }
+
+  .pagination-control {
+    &:hover {
+      opacity: .5;
+      box-shadow: none;
+    }
+  }
+}
+
+

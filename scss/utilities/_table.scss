@@ -1,0 +1,125 @@
+.table, .table-basic, .table-light, .table-dark {
+    width: 100%;
+    border-collapse: collapse;
+    color: inherit;
+    font-size: 15px;
+    text-align: left;
+    border-spacing: 1px;
+    background-color: #fff;
+
+    caption {
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    th, td {
+        padding: 1rem;
+    }
+
+    th {
+        font-weight: 500;
+    }
+
+    .bttn {
+        padding: $bttn-md-Y-padding $bttn-X-padding;
+        font-size: 13px;
+        line-height: normal;
+    }
+}
+
+// Reduce header space and rows
+
+.t-sm {
+    th, td {
+        padding: .5rem 1rem;
+    }
+}
+
+// Aligned from the top for all rows.
+
+.t-align-top {
+    tbody {
+        tr {
+            vertical-align: top;
+        }
+    }
+}
+
+// Border for table rows
+
+.table-basic, .table-light, .table-dark {
+    tbody {
+    
+        tr {
+            border-bottom: 1px solid $md-grey;
+        }
+    }
+}
+
+// Table basic style
+
+.table-basic {
+    thead {
+        border-block-end: 1px solid $dark;
+    }
+}
+
+// Light style
+
+.table-light {
+
+    thead {
+        background-color: $light;
+    }
+
+    tbody {
+
+        th {
+            background-color: $cloud;
+        }
+    }
+}
+
+// Dark style
+
+.table-dark {
+
+    thead {
+        color: $mist;
+        background-color: $dark;
+    }
+
+    tbody {
+
+        th {
+            color: $mist;
+            background-color: #546878;
+        }
+    }
+}
+
+// Generate border full 
+ 
+.t-full-brd {
+    border: 1px solid $md-grey !important;
+
+    td, th {
+        border: 1px solid $md-grey !important;
+    }
+}
+
+// Highlight a row with a highlight color
+
+.t-mark {
+    tbody {
+
+        tr, th, td {
+            transition: background-color .3s;
+            &:hover {
+
+                color: $dark;
+                background-color: rgba($primary,.1);
+            }
+        }
+    }
+}

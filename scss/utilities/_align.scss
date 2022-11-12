@@ -1,0 +1,67 @@
+
+$text-align:(
+    txt-start: left,
+    txt-end: right,
+    txt-center: center,
+    txt-justify: justify
+);
+
+
+@each $key, $value in $text-align {
+
+    .#{$key} {
+        text-align: $value;
+    }
+
+    @include breakpoint-max(tab) {
+        .tab-#{$key} {
+            text-align: $value !important;
+        }
+    }
+
+    @include breakpoint-max(pha) {
+        .pha-#{$key} {
+            text-align: $value !important;
+        }
+    }
+
+    @include breakpoint-max(pho) {
+        .pho-#{$key} {
+            text-align: $value !important;
+        }
+    }
+}
+
+.top {
+    top: 0 !important;
+}
+
+.left {
+    left: 0 !important;
+}
+
+.right {
+    right: 0 !important;
+}
+
+.bottom {
+    bottom: 0 !important;
+}
+
+// Vertical align
+
+.align-top {
+    vertical-align: top;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.align-baseline {
+    vertical-align: baseline;
+}
+
+.align-bottom {
+    vertical-align: bottom;
+}

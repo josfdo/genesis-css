@@ -1,0 +1,52 @@
+// Initiation
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    .card-body, .card-body-twins {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+
+    .card-body-twins {
+        flex: 1 1 auto;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        white-space: normal;
+    }
+
+    img, iframe, audio, video {
+        width: 100%;
+    } 
+}
+
+// General radius
+
+.card-radius {
+    border-radius: 1rem;
+}
+
+
+// Basic card
+
+.card-basic {
+
+    .card-header, .card-body, .card-body-twins, .card-footer {
+        padding: 1rem;
+    }
+}
+
+// Utilities
+
+.card-top-radius {
+    border-radius: 1em 1em 0 0;
+}
+
+.card-bottom-radius {
+    border-radius: 0 0 1em 1em;
+}
