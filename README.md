@@ -63,10 +63,14 @@ genesis-css/
 Archivos que encontrar el la seccion RELEASE o como descarga en el sitio web.
 
 <div style="padding: 1.5rem; background-color: #f6f7fa;">
-genesis-css/
-├── css/
-│   └── normalize.css
-│   └── genesis.css
-└── js/
-    └── genesis-jq.js
+    <pre>
+        <code>
+            genesis-css/
+            ├── css/
+            │   └── normalize.css
+            │   └── genesis.css
+            └── js/
+                └── genesis-jq.js
+        </code>
+    </pre>
 </div>
