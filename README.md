@@ -36,7 +36,8 @@ Este framework utiliza dos archivos de dos autores distintos:
 
 El orden en el que vas a encontrar los archivos es el siguiente:
 
-```genesis-css/
+```
+genesis-css/
 ├── css/
 │   └── normalize.css
 ├── js/
@@ -58,7 +59,8 @@ El orden en el que vas a encontrar los archivos es el siguiente:
 
 Archivos que encontrar el la seccion RELEASE o como descarga en el sitio web.
 
-```genesis-css/
+```
+genesis-css/
 ├── css/
 │   └── normalize.css
 │   └── genesis.css
