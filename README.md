@@ -35,3 +35,38 @@ Este framework utiliza dos archivos de dos autores distintos:
 1. <strong>normalize.css</strong>; De <a href="https://github.com/necolas">(Nicolas Gallagher)</a>, es una alternativa elegida como <em>reset</em>, que del mismo no se ha modificado nada para adaptarlo al framework.
 
 2. <strong>rfs.scss</strong>; de De <a href="https://github.com/martijncuppens">(Martijn Cuppens)</a>, con esta utilidad se hace posible la adaptación del texto a los distintos dispositivos móviles y, también se ha utilizado para los paddings y margins para dimensiones superiores a partir de lo 50px.
+
+<h3>Estructura de los archivos fuente</h3>
+
+El orden en el que vas a encontrar los archivos es el siguiente:
+
+genesis-css/
+├── css/
+│   └── normalize.css
+├── js/
+│   └── genesis-jq.js
+├── scss/
+│    ├── mixin/      
+│    |   └── mixin.scss
+│    ├── utilities/      
+│    |   └── (framework files).scss
+│    ├── variables/      
+│    |   └── variables.scss
+│    └── vendor/
+│        └── rfs.scss
+├── genesis.css
+├── genesis.css.map
+└── genesis.scss
+
+<h3>Estructura de los archivos para producción</h3>
+
+Archivos que encontrar el la seccion RELEASE o como descarga en el sitio web.
+
+<div style="padding: 1.5rem; background-color: #f6f7fa;">
+genesis-css/
+├── css/
+│   └── normalize.css
+│   └── genesis.css
+└── js/
+    └── genesis-jq.js
+</div>
