@@ -29,15 +29,14 @@ ya habrás comprendido lo adaptable que te puede suponer el código de este arch
 
 Este framework utiliza dos archivos de dos autores distintos:
 
-1. **normalize.css**; De <a href="https://github.com/necolas">(Nicolas Gallagher)</a>, es una alternativa elegida como *reset*, que del mismo no se ha modificado nada para adaptarlo al framework.
+1. **normalize.css**; De [Nicolas Gallagher](https://github.com/necolas), es una alternativa elegida como *reset*, que del mismo no se ha modificado nada para adaptarlo al framework.
 
-2. **rfs.scss**; de De <a href="https://github.com/martijncuppens">(Martijn Cuppens)</a>, con esta utilidad se hace posible la adaptación del texto a los distintos dispositivos móviles y, también se ha utilizado para los paddings y margins para dimensiones superiores a partir de lo 50px.
+2. **rfs.scss**; De [Martijn Cuppens](https://github.com/martijncuppens), con esta utilidad se hace posible la adaptación del texto a los distintos dispositivos móviles y, también se ha utilizado para los paddings y margins para dimensiones superiores a partir de lo 50px.
 ### Estructura de los archivos fuente
 
 El orden en el que vas a encontrar los archivos es el siguiente:
 
-`
-genesis-css/
+```genesis-css/
 ├── css/
 │   └── normalize.css
 ├── js/
@@ -54,18 +53,15 @@ genesis-css/
 ├── genesis.css
 ├── genesis.css.map
 └── genesis.scss
-`
+```
 ### Etructura de los archivos para producción
 
 Archivos que encontrar el la seccion RELEASE o como descarga en el sitio web.
 
-<pre class="container-code">
-<code>
-genesis-css/
+```genesis-css/
 ├── css/
 │   └── normalize.css
 │   └── genesis.css
 └── js/
     └── genesis-jq.js
-</code>
-</pre>
+```
