@@ -1,4 +1,4 @@
-# Genesis CSS
+# Génesis CSS
 
 <h3> ¿Qué ofrece el framework? </h3>
 
@@ -16,8 +16,14 @@ muy básico a otra con un nivel más avanazado, pero también habría que hacer 
 
 En estos dos puntos hay que hacer ese paréntesis:
 
-Punto uno; Para una persona que está comenzando en front-end si aun no conoce en la práctica,
+<stron>Punto uno</strong>; Para una persona que está comenzando en front-end si aun no conoce en la práctica,
 pre-procesadores como LESS o SASS, que en este último (scss), es desde dónde parte GÉNESIS CSS; puede encontrarse con una barrera
 en el caso de querer modificar algo e incluso adaptar los archivos a sus necesisdades, pero, si ya por ejemplo ya conoces SASS,
 vas a poder comprobar a simple vista, que todo ha sido escrito desde la parte más básica, para que de este modo puedas realizar los cambios que desees 
 e incluso poder practicar en lo personal, con dichos archivos.
+
+<stron>Punto dos</strong>; Génesis CSS va acompañado de un archivo JavaScript y este es jQuery, que al igual que a los archivos SCSS antes mencionados
+también parte el código desde la base más básica, y este mismo gestiona por ejemplo; efectos <em>slide</em> y <em>fade</em>..., (conmutar) atributos 
+<em>aria-expanded</em> en las utilidades css <em>.dropdwon</em>, gestión de del bloque de menú <em>.sidebar</em> en conjunto con los efectos del botón,
+gestión de la <em>.modal</em> y bloqueo del documento mediante capa trasera mientras esta esta visible... en conlusión tan solo teniendo en cuenta esto tan baśico 
+ya habrás comprendido lo adaptable que te puede suponer el código de este archivo. 
