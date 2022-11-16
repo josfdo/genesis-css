@@ -55,7 +55,7 @@ genesis-css/
 ├── genesis.css.map
 └── genesis.scss
 ```
-### - Etructura de los archivos para producción
+### - Estructura de los archivos para producción
 
 Archivos como descarga principal que se encuentra en el website.
 
