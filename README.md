@@ -32,9 +32,9 @@ Este framework utiliza dos archivos de distinto autor:
 1. **normalize.css**; De [Nicolas Gallagher](https://github.com/necolas), es una alternativa elegida como *reset*, que del mismo no se ha modificado nada para adaptarlo al framework.
 
 2. **rfs.scss**; De [Martijn Cuppens](https://github.com/martijncuppens), esta utilidad hace posible la adaptación del texto a los distintos dispositivos móviles y, también se ha utilizado para los paddings y margins en dimensiones superiores a partir de los 50px.
-### Estructura de los archivos fuente
+### - Estructura de los archivos fuente
 
---El orden en el que vas a encontrar los archivos es el siguiente:
+El orden en el que vas a encontrar los archivos es el siguiente:
 
 ```
 genesis-css/
@@ -55,9 +55,9 @@ genesis-css/
 ├── genesis.css.map
 └── genesis.scss
 ```
-### Etructura de los archivos para producción
+### - Etructura de los archivos para producción
 
---Archivos como descarga principal que se encuentra en el website.
+Archivos como descarga principal que se encuentra en el website.
 
 ```
 genesis-css/
