@@ -15,23 +15,23 @@ muy básico a otra con un nivel más avanazado, pero también habría que hacer 
 En estos dos puntos hay que hacer ese paréntesis:
 
 **Punto uno**; Para una persona que está comenzando en front-end si aun no conoce en la práctica,
-pre-procesadores como LESS o SASS, que en este último (scss), es desde dónde parte GÉNESIS CSS; puede encontrarse con una barrera
-en el caso de querer modificar algo e incluso adaptar los archivos a sus necesisdades, pero, si ya por ejemplo ya conoces SASS,
-vas a poder comprobar a simple vista, que todo ha sido escrito desde la parte más básica, para que de este modo puedas realizar los cambios que desees 
+preprocesadores como LESS o SASS, que en este último (scss), es desde dónde parte GÉNESIS CSS; puede encontrarse con una barrera
+en el caso de querer modificar algo e incluso adaptar los archivos a sus necesisdades, pero, si ya por ejemplo conoces SASS,
+vas a poder comprobar a simple vista, que todo ha sido escrito con una visión muy básica, para que de este modo puedas realizar los cambios que desees 
 e incluso poder practicar en lo personal, con dichos archivos.
 
-**Punto dos**; Génesis CSS va acompañado de un archivo JavaScript y este es jQuery, que al igual que a los archivos SCSS antes mencionados
-también parte el código desde la base más básica, y este mismo gestiona por ejemplo; efectos *slide* y *fade*..., (conmutar) atributos 
-*aria-expanded* en las utilidades css *.dropdwon*, gestión de del bloque de menú *.sidebar* en conjunto con los efectos del botón,
-gestión de la *.modal* y bloqueo del documento mediante capa trasera mientras esta esta visible... en conlusión tan solo teniendo en cuenta esto tan baśico 
+**Punto dos**; Génesis CSS va acompañado de un archivo JavaScript y este basado en jQuery, que al igual que a los archivos SCSS antes mencionados
+este también está ideado con lo básico, ¿qué "gestionará" este archivo JS?, por ejemplo; efectos *slide* y *fade*..., (conmutar) atributos 
+*aria-expanded* para las utilidades css *.dropdown*, gestión del bloque de menú *.sidebar* en conjunto con los efectos del botón y bloqueo de documento,
+gestión de la *.modal* y bloqueo del documento mediante capa trasera mientras esta, está visible... en conlusión; solo teniendo en cuenta esto, tan básico 
 ya habrás comprendido lo adaptable que te puede suponer el código de este archivo.
 ### Archivos o utilidades externas a Génesis CSS
 
-Este framework utiliza dos archivos de dos autores distintos:
+Este framework utiliza dos archivos de distinto autor:
 
 1. **normalize.css**; De [Nicolas Gallagher](https://github.com/necolas), es una alternativa elegida como *reset*, que del mismo no se ha modificado nada para adaptarlo al framework.
 
-2. **rfs.scss**; De [Martijn Cuppens](https://github.com/martijncuppens), con esta utilidad se hace posible la adaptación del texto a los distintos dispositivos móviles y, también se ha utilizado para los paddings y margins para dimensiones superiores a partir de lo 50px.
+2. **rfs.scss**; De [Martijn Cuppens](https://github.com/martijncuppens), esta utilidad hace posible la adaptación del texto a los distintos dispositivos móviles y, también se ha utilizado para los paddings y margins en dimensiones superiores a partir de los 50px.
 ### Estructura de los archivos fuente
 
 El orden en el que vas a encontrar los archivos es el siguiente:
@@ -57,7 +57,7 @@ genesis-css/
 ```
 ### Etructura de los archivos para producción
 
-Archivos que encontrar el la seccion RELEASE o como descarga en el sitio web.
+Archivos como descarga principal que se encuentra en el website.
 
 ```
 genesis-css/
