@@ -57,33 +57,6 @@
     @include font-size(40px !important);
 }
 
-// Link-style 
-
-.link-style {
-    color: $link-color !important;
-    text-decoration: underline !important;
-}
-
-.link-style-hover {
-    color: $link-color !important;
-    text-decoration: none !important;
-    
-    &:hover {
-        text-decoration: underline !important;
-    }
-}
-
-.link-style-opacity {
-        opacity: .7 !important;
-        color: $link-color !important;
-        text-decoration: none !important;
-        transition: opacity .2s;
-        
-        &:hover {
-            opacity: 1 !important;
-        }
-}
-
 // Styles fonts
 
 .fw-bold {
@@ -94,41 +67,8 @@
     font-weight: 300 !important;
 }
 
-.fw-lighter {
-    font-weight: lighter !important;
-}
-
 .fw-normal {
     font-weight: 400 !important;
-}
-
-
-// Convert fonts uppercase
-
-.uppercase, .uppercase-md, .uppercase-sm {
-    text-transform: uppercase;
-}
-
-.uppercase-sm {
-    font-size: $font-size-h6 !important;
-    letter-spacing: 1px;
-}
-
-.uppercase-md {
-    font-size: $font-size-h5 !important;
-    letter-spacing: 0.3px;
-}
-
-.uppercase-none {
-    text-transform: none !important;
-    font-size: inherit !important;
-    line-height: inherit !important;
-}
-
-// Class for delete line-height.
-
-.lh-0 {
-    line-height: 0;
 }
 
 // Line clamp 
@@ -146,6 +86,12 @@
 
 .line-clamp-3 {
     -webkit-line-clamp: 5;
+}
+
+// font variant properties
+
+.all-small-caps {
+    font-variant: all-small-caps;
 }
 
 // Add fonts color

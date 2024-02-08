@@ -1,46 +1,20 @@
+// Property display-flex
+
 .d-fx {
     display: flex;
 }
 
-// Flex-wrap.
+// Property flex-wrap
 
 .fx-wrap {
-    flex-wrap: wrap !important;
+    flex-wrap: wrap;
 }
 
-.fx-row-wrap {
-    flex-flow: row wrap !important;
+.fx-wrap-reverse {
+    flex-wrap: wrap-reverse;
 }
 
-// Align-items.
-
-.align-items-center {
-    align-items: center !important;
-}
-
-// Justify-content.
-
-.justify-content-center {
-    justify-content: center !important;
-}
-
-.justify-content-start {
-    justify-content: flex-start !important;
-}
-
-.justify-content-end {
-    justify-content: flex-end !important;
-}
-
-.justify-content-btw {
-    justify-content: space-between !important;
-}
-
-.justify-content-around {
-    justify-content: space-around !important;
-}
-
-// Flex-row.
+// Property flex-direction
 
 .fx-row {
     flex-direction: row;
@@ -50,14 +24,172 @@
     flex-direction: row-reverse;
 }
 
-// Flex-column.
-
 .fx-column {
-    flex-direction: column !important;
+    flex-direction: column;
 }
 
 .fx-column-reverse {
-    flex-direction: column-reverse !important;
+    flex-direction: column-reverse;
+}
+
+// Property align-content
+
+.ac-stretch {
+    align-content: stretch;
+}
+
+.ac-center {
+    align-content: center;
+}
+
+.ac-start {
+    align-content: flex-start;
+}
+
+.ac-end {
+    align-content: flex-end;
+}
+
+.ac-btw {
+    align-content: space-between;
+}
+
+.ac-around {
+    align-content: space-around;
+}
+
+.ac-evenly {
+    align-content: space-evenly;
+}
+
+// Propiedades align-items
+
+.ai-stretch {
+    align-items: stretch;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.ai-start {
+    align-items: flex-start;
+}
+
+.ai-end {
+    align-items: flex-end;
+}
+
+.ai-bs {
+    align-items: baseline;
+}
+
+// Property align-self
+
+.as-stretch {
+    align-self: stretch;
+}
+
+.as-center {
+    align-self: center;
+}
+
+.as-start {
+    align-self: flex-start;
+}
+
+.as-end {
+    align-self: flex-end;
+}
+
+.as-baseline {
+    align-self: baseline;
+}
+
+// Property justify-content
+
+.jc-start {
+    justify-content: flex-start;
+}
+
+.jc-end {
+    justify-content: flex-end;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-btw {
+    justify-content: space-between;
+}
+
+.jc-around {
+    justify-content: space-around;
+}
+
+.jc-evenly {
+    justify-content: space-evenly;
+}
+
+// Property justify-items
+
+.ji-stretch {
+    justify-items: stretch;
+}
+
+.ji-center {
+    justify-items: center;
+}
+
+.ji-start {
+    justify-items: start;
+}
+
+.ji-end {
+    justify-items: end;
+}
+
+.ji-fx-start {
+    justify-items: flex-start;
+}
+
+.ji-fx-end {
+    justify-items: flex-end;
+}
+
+.ji-baseline {
+    justify-items: baseline;
+}
+
+// Property justify-self
+
+.js-stretch {
+    justify-self: stretch;
+}
+
+.js-center {
+    justify-self: center;
+}
+
+.js-start {
+    justify-self: start;
+}
+
+.js-end {
+    justify-self: end;
+}
+
+.js-fx-start {
+    justify-self: flex-start;
+}
+
+.js-fx-end {
+    justify-self: flex-end;
+}
+
+.js-baseline {
+    justify-self: baseline;
 }
 
 // Flex-column breakpoint.

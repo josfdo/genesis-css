@@ -1,9 +1,3 @@
-@media screen and (min-width: map-get($breakpoint, pho-xs)) {
-    .pho-xs {
-        width: 100% !important;
-    }
-}
-
 @media screen and (min-width: map-get($breakpoint, pho)) {
     
     @for $i from 1 through 12 {

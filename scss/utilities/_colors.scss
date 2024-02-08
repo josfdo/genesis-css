@@ -2,7 +2,19 @@
 
 @each $key, $value in $full-colors {
 
-    .bg-#{$key} {
+    $bg-class: unquote(".bg-#{$key}");
+
+    #{$bg-class} {
+
+        @if str-index($bg-class, "bg-dark-") != null {
+
+            color: #fff;
+
+        } @else {
+
+            color: map-get($text-background-colors, $key) !important;
+        }
+
         background-color: $value !important;
     }
 }

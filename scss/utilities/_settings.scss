@@ -2,22 +2,34 @@
 
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
+//300
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+//400
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+//500
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+//700
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap');
+
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
-  color: $dark;
+  font-family: 'Open sans', sans-serif;
+
+  @include breakpoint-min(pha) {
+    font-size: 15px;
+  }
+
+  color: $color-global-text;
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
 
   :focus-visible {
-    @include focus-style;
+    outline: 1px solid $border-focus;
+    outline-offset: 1px;
+    box-shadow: 0 0 0 1px rgb(153, 221, 255);
+    position: relative;
   }
   
 }
@@ -51,7 +63,7 @@ form {
 hr {
   height: 1px;
   border: none;
-  background-color: $grey;
+  background-color: $border-color-default;
 }
 
 img {
@@ -63,6 +75,3 @@ img {
   text-decoration: none;
 }
 
-
-
-// END SETTINGS

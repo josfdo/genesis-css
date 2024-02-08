@@ -1,0 +1,148 @@
+.msg-basic, 
+.msg,
+.msg-notice {
+    padding: 1rem;
+    border-radius: $bttn-radius-child;
+    box-sizing: border-box;
+    user-select: none;
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    hr {
+        height: 0;
+        border: 0;
+        border-top: 1px solid;
+    }
+
+    .msg-icon-close {
+        float: right;
+        margin-left: 1rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 4px;
+        margin-top: -2px;
+        line-height: 14px;
+        opacity: .8;
+        text-decoration: none;
+        transition: opacity .3s;
+
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    [href] {
+        opacity: .8;
+        text-decoration: underline;
+        transition: opacity $transition-default;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    :focus-visible {
+        outline: none;
+        border-color: transparent;
+        position: relative;
+    }
+}
+
+
+// Style basic msg
+
+.msg-basic {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border: 0 !important;
+    border-radius: 0;
+}
+
+@each $key, $value in $alert-color {
+
+    .msg-#{$key} {
+        color: map-get($text-alert-color, $key);
+        border: 1px solid map-get($border-alert-color, $key);
+        background-color: $value;
+    }
+}
+
+// Msg fixed end page
+
+.msg-fixed-end {
+    width: 100%;
+    @include breakpoint-min(pha) {
+        padding-block: 1.5rem;
+    }
+    position: fixed;
+    bottom: 0;
+    z-index: 1020;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+// Notice
+
+.msg-notice {
+    border-inline-start-width: 3px;
+    border-inline-start-style: solid;
+    border-radius: 0;
+
+    [href] {
+        transition: none;
+    }
+
+    [class*="link-notice"] {
+        font-weight: bold;
+        font-size: 0.875em;
+        line-height: 0.625rem;
+    }
+}
+
+// Msg notice color
+
+@each $key, $value in $notice-color {
+
+    .msg-notice-#{$key} {
+        color: map-get($text-notice-color, $key);
+        border-inline-start-color: map-get($border-notice-color, $key);
+        background-color: $value;
+    }
+}
+
+// Button notice
+
+[class*="bttn-notice-"] {
+
+    &:focus-visible {
+        outline: none;
+        border-color: transparent;
+        position: relative;
+        border-radius: 2px;
+    }
+}
+
+@each $key, $value in $button-notice-color {
+
+    .bttn-notice-#{$key} {
+        color: map-get($text-button-notice-color, $key);
+        background-color: $value;
+    
+        &:hover {
+            background-color: rgba(red($value), green($value), blue($value), 0.25);
+        }
+    }
+
+    // Focused msg-alerts & msg-notices
+
+    .msg-#{$key}, .msg-notice-#{$key} {
+        :focus-visible {
+            background-color: rgba(red($value), green($value), blue($value), .2);
+            box-shadow: 0 0 0 1px rgba(red($value), green($value), blue($value), .7) !important;
+        }
+    }
+}

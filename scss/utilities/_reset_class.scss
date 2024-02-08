@@ -12,15 +12,7 @@
 .navbar-content, 
 .dropdown, 
 .auto-fill-sm, 
-.auto-fill-md, 
-.gallery-slide {
+.auto-fill-md {
 
     @include reset-list-style;
-}
-
-// Scrollbar hidden
-
-.gallery-box, 
-.gallery-slide {
-    @include scrollbar-hidden;
 }

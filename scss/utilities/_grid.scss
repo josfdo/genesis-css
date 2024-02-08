@@ -36,16 +36,15 @@
 
 // Columns.
 
-.col {
+.col, .col-child {
     float: left;
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
 }
 
-// Columns settings.
-
-.cols-sm {
+.col-child {
+    
     .col {
         padding: 0.5rem;
     }
@@ -53,8 +52,7 @@
 
 // Settings images in columns.
 
-[class*="col"],
-[class*="col-"] {
+[class*="col"] {
     img {
         width: 100%;
     }
@@ -78,5 +76,18 @@
     }
 
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+// Centered content
+
+.center-content,
+.center-full-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-full-content {
+    align-items: center;
 }
 

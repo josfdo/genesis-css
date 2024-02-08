@@ -51,6 +51,20 @@
     overflow-y: auto;
 }
 
+// Overflow scroll class properties.
+
+.oflow-scroll {
+    overflow: scroll;
+}
+
+.oflow-x-scroll {
+    overflow-x: scroll;
+}
+
+.oflow-y-scroll {
+    overflow-y: scroll;
+}
+
 // Scrollbar hidden
 
 .scrollbar-hidden {
@@ -63,21 +77,9 @@
     }
 }
 
-// Mobile device visible
-
-@include breakpoint-min(tab) {
-    .mobile-device-visible {
-        display: none !important;
-    }
-}
-
 // Mobile device hidden
 
 @include breakpoint-max(tab) {
-    .mobile-device-hidden {
-        display: none !important;
-    }
-
     .control-slide-mobile-device-hidden {
 
         [data-control] {
@@ -116,34 +118,15 @@
 
 // Hover background and opacity
 
-.hover-item {
-    @include hover-item(var(--hover-item));
-}
-
 .hover-item-link {
     [href] {
-        @include hover-item(var(--hover-item));
+        @include hover-item($hover-item);
     }
-}
-
-.hover-opacity {
-    @include hover-opacity(.7);
 }
 
 .hover-opacity-link {
     [href] {
         @include hover-opacity(.7);
-    }
-}
-
-.reverse-link-opacity {
-    [href] {
-        opacity: .7;
-        transition: opacity var(--transition-default);
-
-        &:hover {
-            opacity:  1 !important;
-        }
     }
 }
 
@@ -159,7 +142,7 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s, visibility .3s;
-    background-color: var(--backdrop-dark);
+    background-color: $backdrop-dark;
 }
 
 .backdrop-locked {
@@ -235,3 +218,4 @@
 .shadow-none {
     box-shadow: none !important;
 }
+

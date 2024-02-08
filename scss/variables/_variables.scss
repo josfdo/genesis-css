@@ -1,69 +1,95 @@
-:root {
+// Border dropdown-menu
 
-    // background color lighter
+$border-dropdown-menu: rgba(181,193,204, .6);
 
-    --bg-lighter-primary: #f2fbff;
-    --bg-lighter-positive: #f2fdf2;
-    --bg-lighter-warning: #fffaeb;
-    --bg-lighter-negative: #ffeded;
-    --bg-lighter-light: #f6f7fa;
-    --bg-lighter-black: #1a1a1a;
+// Focus box-shadow
 
-    // font color lighter
+$focus-form-bxsh-offset: 0 0 0 0.125rem;
 
-    --font-lighter-primary: #194553;
-    --font-lighter-positive: #0e5d0e;
-    --font-lighter-warning: #4d3d00;
-    --font-lighter-negative: #660000;
-    --font-lighter-light: #5a6a72;
-    --font-lighter-black: #fff;
+// Disabled attr or class
 
-    // border color lighter
+$disabled-background: #eaeff3;
+$disabled-text: #9fa6ac;
 
-    --border-lighter-primary: #d1e8ed;
-    --border-lighter-positive: #d2e1cb;
-    --border-lighter-warning: #d7d1c3;
-    --border-lighter-negative: #dbbebe;
-    --border-lighter-light: #c9cdcf;
-    --border-lighter-black: #000;
+// backdrop dark 
 
-    // backdrop dark 
+$backdrop-dark: rgba(0,0,0,.5);
 
-    --backdrop-dark: rgba(0,0,0,.5);
+// hover
 
-    // hover
+$hover-item: #f3f9fc;
 
-    --hover-item: rgba(204,204,204,.2); 
+// Placeholder 
 
-    // Placeholder 
+$placeholder-color-text: #495a6999;
 
-    --placeholder: rgba(73,90,105,.6);
+// Color file selector button
 
-    // Color file selector button
+$color-file-selector-button: rgb(73,90,105);
 
-    --color-file-selector-button: rgb(73,90,105);
+// transition default
 
-    // transition default
+$transition-default: .2s ease-in-out;
 
-    --transition-default: .2s ease-in-out;
+// spacing 
 
-    // spacing 
+$spacer-one: .5rem;
+$spacer-two: 1rem;
+$spacer-three: 1.5rem;
+$spacer-four: 2rem;
+$spacer-five: 2.5rem;
 
-    --spacer-one: .5rem;
-    --spacer-two: 1rem;
-    --spacer-three: 1.5rem;
-    --spacer-four: 2rem;
-    --spacer-five: 2.5rem;
+//Sidebar sizing
 
-    //Sidebar sizing
+$sidebar-width: 18.75rem;
 
-    --sidebar-width: 18.75rem;
-}
+// colors background
+
+$primary-light: #afd0fc;
+$primary-dark: #167DB1;
+$positive-light: #b3ded0;
+$positive-dark: #2d8655;
+$warning-light: #ffe0b2;
+$negative-light:#efb2b2;
+$negative-dark: #dd3636;
+$muted-color: #e5ebf0;
+$light-color: #f6f7fa;
+$grey: #b7c2cc;
+$md-grey:#d3dae1;
+$dark: #3f4e5a;
+$cloud: #fafbfd;
+$mist: #fbfdfe;
+$white: #fff;
+$black-bunker: #131419;
+$black-charade: #2a2f3a;
+$black-tuna: #333846;
+$button-check: #eaf0f4;
+$link-color-light:dodgerblue;
+$link-color-dark:#006BD6;
+$border-focus:#469de9;
+$border-focus-mobile:#90c4f1;
+$color-global-text:rgba(56,70,81);
+$color-text-button-group: #556979;
+$border-color-default:#d3dae1;
+$border-color-input-form:#a8aeb4;
+$form-item-message: #59757D;
+
+// Text into background color
+
+$primary-text-bg: #375176;
+$positive-text-bg: #2C6350;
+$warning-text-bg: #8F5600;
+$negative-text-bg: #751919;
+$muted-text-bg: #626B6F;
+$grey-text-bg: #3B5159;
+$mdgrey-text-bg: #4A5C68;
+$light-text-bg: #6C727A;
+$cloud-text-bg: #6B728E;
+$mist-text-bg: #587884;
 
 // Breakpoints
 
 $breakpoint: (
-    pho-xs: 550px, //screen small mobile
     pho: 550px, // screen mobile 550px
     pha: 770px, //screen phablet 750px
     tab: 990px, //screen tablet 990px
@@ -73,73 +99,177 @@ $breakpoint: (
 
 // Breakpoint class name
 
-$pho-xs: ".pho-xs";
 $phone: ".pho-";
 $phablet: ".pha-";
 $tablet: ".tab-";
 $laptop: ".lap-";
 $desktop: ".des-";
 
-// Full colors
-
-$primary: #167DB1;
-$positive: #2d8655;
-$negative:#dd3636;
-$muted: #e5ebf0;
-$light: #f6f7fa;
-$grey: #b7c2cc;
-$md-grey:#d3dae1;
-$dark: #3f4e5a;
-$cloud: #fafbfd;
-$mist: #fbfdfe;
-$white: #fff;
-$black: #1a1a1a;
-$link-color: #0070b8;
-
 $full-colors: (
-    "primary": $primary,
-    "positive": $positive,
-    "negative": $negative,
-    "muted": $muted,
-    "light": $light,
+    "primary": $primary-light,
+    "dark-primary": $primary-dark,
+    "positive": $positive-light,
+    "dark-positive": $positive-dark,
+    "warning": $warning-light,
+    "negative": $negative-light,
+    "dark-negative": $negative-dark,
+    "muted": $muted-color,
+    "light": $light-color,
     "grey": $grey,
     "mdgrey": $md-grey,
     "dark": $dark,
     "cloud": $cloud,
     "mist": $mist,
     "white": $white,
-    "black": $black
+    "tuna": $black-tuna,
+    "charade": $black-charade,
+    "bunker": $black-bunker,
 );
 
-//Usage only buttons
+//Button color
 
 $buttons: (
-    "primary": $primary,
-    "positive": $positive,
-    "negative": $negative,
-    "dark": $dark,
-    "light": $light
+    "primary": #167DB1,
+    "positive": #2d8655,
+    "negative": #dd3636,
+    "dark": #3f4e5a,
+    "light": #f6f7fa
 );
 
-//usage in fonts and border
+//Button lighter color
+
+$buttons-default: (
+    "primary": #cbe4ff66,
+    "positive": #96d3c54d,
+    "negative": #d79fc44d,
+    "dark": #b8c0c64d
+);
+
+$buttons-default-text: (
+    "primary": #0064D1,
+    "positive": #1b6c49,
+    "negative": #7b1528,
+    "dark": #59626a
+);
+
+$buttons-default-hover: (
+    "primary": #cbe4ff99,
+    "positive": #96d3c566,
+    "negative": #d79fc466,
+    "dark": #b8c0c666
+);
+
+$buttons-default-focus: (
+    "primary":  #cbe4ff,
+    "positive": #96d3c5b3,
+    "negative": #d79fc4b3,
+    "dark": #b8c0c6b3
+);
+
+// Font color
+
+$text-background-colors: (
+    "primary": $primary-text-bg,
+    "positive": $positive-text-bg,
+    "warning": $warning-text-bg,
+    "negative": $negative-text-bg,
+    "muted": $muted-text-bg,
+    "grey": $grey-text-bg,
+    "mdgrey": $mdgrey-text-bg,
+    "light": $light-text-bg,
+    "cloud": $cloud-text-bg,
+    "mist": $mist-text-bg,
+    "dark": $white,
+    "white": $color-global-text,
+    "tuna": $white,
+    "charade": $white,
+    "bunker": $white,
+);
 
 $text-colors: (
-    "primary": $primary,
-    "positive": $positive,
-    "negative": $negative,
-    "muted": $muted,
-    "grey": $grey,
-    "mdgrey": $md-grey,
-    "dark": $dark,
-    "white": $white,
-    "black": $black
+    "primary": #4277BD,
+    "positive": #3A8369,
+    "warning": #A86500,
+    "negative": #a30000,
+    "muted": #61798F,
+    "grey": #547392,
+    "dark": #3f4e5a,
+    "white": #fff,
+    "bunker": #131419
 );
 
-// Border colors 
+// Border color
 
 $border-colors: (
-    "muted": $muted,
-    "grey": $grey,
+    "primary": $primary-dark,
+    "positive": $positive-dark,
+    "negative": $negative-dark,
+    "muted": $muted-color
+);
+
+// Alerts colors
+
+$alert-color:(
+    "info": #edf4fe,
+    "success": #e5f4ef,
+    "warning": #fffaec,
+    "error": #fceef1
+);
+
+$text-alert-color:(
+    "info": #205aa4,
+    "success": #00754e,
+    "warning": #786139,
+    "error": #6f0d19
+);
+
+$border-alert-color:(
+    "info": #b0c6e3,
+    "success": #a1c7bb,
+    "warning": #d3c7af,
+    "error": #e3bbbb
+);
+
+// Notice colors
+
+$notice-color:(
+    "info": rgba(#167DB1, .1),
+    "success": rgba(#2d8655, .1),
+    "warning": #fff8e4,
+    "error": #fbeaea,
+    "light": rgba(#3f4e5a, .1)
+);
+
+$text-notice-color:(
+    "info": #11648d,
+    "success": #1f5d3b,
+    "warning": #4d3d00,
+    "error": #842020,
+    "light": #3f4e5a
+);
+
+$border-notice-color:(
+    "info": rgba(#167DB1, .7),
+    "success": rgba(#2d8655, .7),
+    "warning": #a69e7f,
+    "error": rgba(#b02b2b, .7),
+    "light": rgba(#3f4e5a, .5)
+);
+
+$text-button-notice-color:(
+    "info": #11648d,
+    "success": #1f5d3b,
+    "warning": #4d3d00,
+    "error": #842020,
+    "light": #3f4e5a
+);
+
+$button-notice-color:(
+    "info": rgba(#167DB1, 0.18),
+    "success": rgba(#2d8655, 0.18),
+    "warning": rgba(#a69e7f, 0.30),
+    "error": rgba(#842020, 0.18),
+    "light": rgba(#3f4e5a, 0.18)
 );
 
 // Border-radius
@@ -176,31 +306,40 @@ $display-font: ".f6, .f7, .f8, .f9, .f10, .f11, .f12";
 $bttn-default: (
     ".bttn",
     ".bttn-md",
-    ".bttn-sm",
-    ".bttn-color",
-    ".bttn-check"
+    ".bttn-sm"
 );
 
 // Standard button
 
 $bttn-Y-padding:  .5rem;
 $bttn-X-padding: 1rem;
-$bttn-line-height: 1.5;
+$bttn-line-height: 1.125rem;
 $bttn-Y-margin: 0.1875rem;
 $bttn-X-margin: 0;
 
 // Middle button
 
-$bttn-md-Y-padding: .25rem;
-$bttn-md-X-padding: $bttn-X-padding;
+$bttn-md-Y-padding: 0.375rem;
+$bttn-md-X-padding: 1rem;
 
 // Small button
-$bttn-sm-Y-padding: .4rem;
-$bttn-sm-X-padding: .4rem;
+
+$bttn-sm-Y-padding: 0.375rem;
+$bttn-sm-X-padding: .5rem;
+
+// Focus border color
+
+$bttn-focus-primary: ".bttn-solid-primary, .bttn-bg-primary, .bttn-reverse-primary, .bttn-notice-info";
+$bttn-focus-positive: ".bttn-solid-positive, .bttn-bg-positive, .bttn-reverse-positive, .bttn-notice-success";
+$bttn-focus-warning: ".bttn-notice-warning";
+$bttn-focus-negative: ".bttn-solid-negative, .bttn-bg-negative, .bttn-reverse-negative, .bttn-notice-error";
+$bttn-focus-light: ".bttn-solid-light, .bttn-bg-light, .bttn-reverse-light, .bttn-notice-light";
+$bttn-focus-dark: ".bttn-solid-dark, .bttn-bg-dark, .bttn-reverse-dark";
 
 // Radius bttn
 
-$bttn-radius: .25rem;
+$bttn-radius-parent: 0.375rem;
+$bttn-radius-child: 0.3125rem;
 
 
 // Form
@@ -227,3 +366,11 @@ $orientation:(
 $animation-slide-up: "slide-up";
 $animation-zoom: "zoom";
 $animation-smooth: "smooth";
+
+// CSS Variables
+
+:root {
+    @each $breakpoint-name, $breakpoint-value in $breakpoint {
+      --#{$breakpoint-name}: #{$breakpoint-value};
+    }
+}

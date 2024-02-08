@@ -1,33 +1,106 @@
 // Caret icons class.
 
 [class*="caret-"] {
-    width: 0;
-    height: 0;
-    display: inline-block;
-    border: .3rem solid transparent;
-    vertical-align: middle;
-    transition: transform .5s ease-in-out;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border: .3rem solid transparent;
+  vertical-align: middle;
+  transition: transform .5s ease-in-out;
 }
 
 .caret-down {
-   margin-bottom: 1px;
-   border-bottom: 0;
-   border-top-color: initial;
+  margin-bottom: 1px;
+  border-bottom: 0;
+  border-top-color: initial;
 }
 
 .caret-left {
-    border-left: 0;
-    border-right-color: initial;
+  border-left: 0;
+  border-right-color: initial;
 }
 
 .caret-right {
-    border-right: 0;
-    border-left-color: initial;
+  border-right: 0;
+  border-left-color: initial;
 }
 
 .caret-up {
-    margin-bottom: 2px;
-    border-top: 0;
-    border-bottom-color: initial;
+  margin-bottom: 2px;
+  border-top: 0;
+  border-bottom-color: initial;
 }
 
+// SVG
+
+.icon-close,
+.icon-navbar-toggle {
+  vertical-align: middle;
+  display: inline-block;
+  background-color: currentColor;
+  opacity: .7;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.icon-close {
+  width: 1.25rem;
+  height: 1.25rem;
+
+  @include breakpoint-max(tab) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  -webkit-mask: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath d='M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z'%3e%3c/path%3e%3c/svg%3e") center/cover;
+
+  mask: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath d='M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z'%3e%3c/path%3e%3c/svg%3e") center/cover;
+}
+
+.icon-navbar-toggle {
+  width: 32px;
+  height: 32px;
+
+  -webkit-mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M16 5H0V4h16v1zm0 8H0v-1h16v1zm0-4.008H0V8h16v.992z"%2F%3E%3C%2Fsvg%3E') center/cover;
+
+  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M16 5H0V4h16v1zm0 8H0v-1h16v1zm0-4.008H0V8h16v.992z"%2F%3E%3C%2Fsvg%3E') center/cover;
+}
+
+// Iconos de alertas
+
+.icon-info,
+.icon-success,
+.icon-check,
+.icon-warning,
+.icon-error {
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 2px;
+  margin-block-start: -4px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: currentColor;
+}
+
+.icon-info {
+  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.icon-error {
+  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.icon-success {
+  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5l8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.icon-check {
+  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.icon-warning {
+  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M1 21h22L12 2zm3.47-2L12 5.99L19.53 19zM11 16h2v2h-2zm0-6h2v4h-2z"%2F%3E%3C%2Fsvg%3E');
+}

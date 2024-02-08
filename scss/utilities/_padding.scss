@@ -12,23 +12,23 @@ $value: $spacing-level-one;
     
     .px-#{$i},
     .ps-#{$i}{
-        padding-left: $i * $value !important;
+        padding-inline-start: $i * $value !important;
     }
     
     .px-#{$i},
     .pe-#{$i}{
-        padding-right: $i * $value !important;
+        padding-inline-end: $i * $value !important;
     }
     
 
     .py-#{$i},
     .pt-#{$i}{
-        padding-top: $i * $value !important;
+        padding-block-start: $i * $value !important;
     }
     
     .py-#{$i},
     .pb-#{$i}{
-        padding-bottom: $i * $value !important;
+        padding-block-end: $i * $value !important;
     }
 } 
 
@@ -59,58 +59,410 @@ $value: $spacing-level-one;
     @include padding-bottom(250px);
 }
 
-//
+// Special paddings.
 
-.py-sm, .pt-sm {
+.py-sm, 
+.pt-sm {
     @include padding-top(50px);
 }
 
-.py-sm, .pb-sm {
+.py-sm, 
+.pb-sm {
     @include padding-bottom(50px);
 }
 
-.py-md, .pt-md {
+.py-md, 
+.pt-md {
     @include padding-top(100px);
 }
 
-.py-md, .pb-md {
+.py-md, 
+.pb-md {
     @include padding-bottom(100px);
 }
 
-.py-lg, .pt-lg {
+.py-lg, 
+.pt-lg {
     @include padding-top(150px);
 }
 
-.py-lg, .pb-lg {
+.py-lg, 
+.pb-lg {
     @include padding-bottom(150px);
 }
 
-.py-xl, .pt-xl{
+.py-xl, 
+.pt-xl{
     @include padding-top(200px);
 }
 
-.py-xl, .pb-xl{
+.py-xl, 
+.pb-xl{
     @include padding-bottom(200px);
 }
 
-.py-xxl, .pt-xxl{
+.py-xxl, 
+.pt-xxl{
     @include padding-top(250px);
 }
 
-.py-xxl, .pb-xxl{
+.py-xxl, 
+.pb-xxl{
     @include padding-bottom(250px);
 }
 
-// Clear margins in breakpoint
+// Laptop
 
-@include breakpoint-max(tab) {
-    .mobile-device-py-0 {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+@include breakpoint-max(lap) {
+    .lap-py-0 {
+        padding-block: 0 !important;
     }
 
-    .mobile-device-px-0 {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+    .lap-px-0 {
+        padding-inline: 0 !important;
+    }
+
+    @for $i from 0 through 5 {
+
+        .lap-p-#{$i}{
+            padding: $i * $value !important;
+        }
+        
+        .lap-px-#{$i},
+        .lap-ps-#{$i}{
+            padding-inline-start: $i * $value !important;
+        }
+        
+        .lap-px-#{$i},
+        .lap-pe-#{$i}{
+            padding-inline-end: $i * $value !important;
+        }
+        
+        .lap-py-#{$i},
+        .lap-pt-#{$i}{
+            padding-block-start: $i * $value !important;
+        }
+        
+        .lap-py-#{$i},
+        .lap-pb-#{$i}{
+            padding-block-end: $i * $value !important;
+        }
+    } 
+    
+    .lap-py-sm, 
+    .lap-pt-sm {
+        @include padding-top(50px);
+    }
+
+    .lap-py-sm, 
+    .lap-pb-sm {
+        @include padding-bottom(50px);
+    }
+
+    .lap-py-md, 
+    .lap-pt-md {
+        @include padding-top(100px);
+    }
+
+    .lap-py-md, 
+    .lap-pb-md {
+        @include padding-bottom(100px);
+    }
+
+    .lap-py-lg, 
+    .lap-pt-lg {
+        @include padding-top(150px);
+    }
+
+    .lap-py-lg, 
+    .lap-pb-lg {
+        @include padding-bottom(150px);
+    }
+
+    .lap-py-xl, 
+    .lap-pt-xl{
+        @include padding-top(200px);
+    }
+
+    .lap-py-xl, 
+    .lap-pb-xl{
+        @include padding-bottom(200px);
+    }
+
+    .lap-py-xxl, 
+    .lap-pt-xxl{
+        @include padding-top(250px);
+    }
+
+    .lap-py-xxl, 
+    .lap-pb-xxl{
+        @include padding-bottom(250px);
+    }
+}
+
+// Tablet
+
+@include breakpoint-max(tab) {
+    .tab-py-0 {
+        padding-block: 0 !important;
+    }
+
+    .tab-px-0 {
+        padding-inline: 0 !important;
+    }
+
+    @for $i from 0 through 5 {
+
+        .tab-p-#{$i}{
+            padding: $i * $value !important;
+        }
+        
+        .tab-px-#{$i},
+        .tab-ps-#{$i}{
+            padding-inline-start: $i * $value !important;
+        }
+        
+        .tab-px-#{$i},
+        .tab-pe-#{$i}{
+            padding-inline-end: $i * $value !important;
+        }
+        
+        .tab-py-#{$i},
+        .tab-pt-#{$i}{
+            padding-block-start: $i * $value !important;
+        }
+        
+        .tab-py-#{$i},
+        .tab-pb-#{$i}{
+            padding-block-end: $i * $value !important;
+        }
+    }  
+    
+    .tab-py-sm, 
+    .tab-pt-sm {
+        @include padding-top(50px);
+    }
+
+    .tab-py-sm, 
+    .tab-pb-sm {
+        @include padding-bottom(50px);
+    }
+
+    .tab-py-md, 
+    .tab-pt-md {
+        @include padding-top(100px);
+    }
+
+    .tab-py-md, 
+    .tab-pb-md {
+        @include padding-bottom(100px);
+    }
+
+    .tab-py-lg, 
+    .tab-pt-lg {
+        @include padding-top(150px);
+    }
+
+    .tab-py-lg, 
+    .tab-pb-lg {
+        @include padding-bottom(150px);
+    }
+
+    .tab-py-xl, 
+    .tab-pt-xl{
+        @include padding-top(200px);
+    }
+
+    .tab-py-xl, 
+    .tab-pb-xl{
+        @include padding-bottom(200px);
+    }
+
+    .tab-py-xxl, 
+    .tab-pt-xxl{
+        @include padding-top(250px);
+    }
+
+    .tab-py-xxl, 
+    .tab-pb-xxl{
+        @include padding-bottom(250px);
+    }
+}
+
+// Phablet
+
+@include breakpoint-max(pha) {
+    .pha-py-0 {
+        padding-block: 0 !important;
+    }
+
+    .pha-px-0 {
+        padding-inline: 0 !important;
+    }
+
+    @for $i from 0 through 5 {
+
+        .pha-p-#{$i}{
+            padding: $i * $value !important;
+        }
+        
+        .pha-px-#{$i},
+        .pha-ps-#{$i}{
+            padding-inline-start: $i * $value !important;
+        }
+        
+        .pha-px-#{$i},
+        .pha-pe-#{$i}{
+            padding-inline-end: $i * $value !important;
+        }
+        
+        .pha-py-#{$i},
+        .pha-pt-#{$i}{
+            padding-block-start: $i * $value !important;
+        }
+        
+        .pha-py-#{$i},
+        .pha-pb-#{$i}{
+            padding-block-end: $i * $value !important;
+        }
+    } 
+    
+    .pha-py-sm, 
+    .pha-pt-sm {
+        @include padding-top(50px);
+    }
+
+    .pha-py-sm, 
+    .pha-pb-sm {
+        @include padding-bottom(50px);
+    }
+
+    .pha-py-md, 
+    .pha-pt-md {
+        @include padding-top(100px);
+    }
+
+    .pha-py-md, 
+    .pha-pb-md {
+        @include padding-bottom(100px);
+    }
+
+    .pha-py-lg, 
+    .pha-pt-lg {
+        @include padding-top(150px);
+    }
+
+    .pha-py-lg, 
+    .pha-pb-lg {
+        @include padding-bottom(150px);
+    }
+
+    .pha-py-xl, 
+    .pha-pt-xl{
+        @include padding-top(200px);
+    }
+
+    .pha-py-xl, 
+    .pha-pb-xl{
+        @include padding-bottom(200px);
+    }
+
+    .pha-py-xxl, 
+    .pha-pt-xxl{
+        @include padding-top(250px);
+    }
+
+    .pha-py-xxl, 
+    .pha-pb-xxl{
+        @include padding-bottom(250px);
+    }
+}
+
+// Phone
+
+@include breakpoint-max(pho) {
+    .pho-py-0 {
+        padding-block: 0 !important;
+    }
+
+    .pho-px-0 {
+        padding-inline: 0 !important;
+    }
+
+    @for $i from 0 through 5 {
+
+        .pho-p-#{$i}{
+            padding: $i * $value !important;
+        }
+        
+        .pho-px-#{$i},
+        .pho-ps-#{$i}{
+            padding-inline-start: $i * $value !important;
+        }
+        
+        .pho-px-#{$i},
+        .pho-pe-#{$i}{
+            padding-inline-end: $i * $value !important;
+        }
+        
+        .pho-py-#{$i},
+        .pho-pt-#{$i}{
+            padding-block-start: $i * $value !important;
+        }
+        
+        .pho-py-#{$i},
+        .pho-pb-#{$i}{
+            padding-block-end: $i * $value !important;
+        }
+    }
+    
+    .pho-py-sm, 
+    .pho-pt-sm {
+        @include padding-top(50px);
+    }
+
+    .pho-py-sm, 
+    .pho-pb-sm {
+        @include padding-bottom(50px);
+    }
+
+    .pho-py-md, 
+    .pho-pt-md {
+        @include padding-top(100px);
+    }
+
+    .pho-py-md, 
+    .pho-pb-md {
+        @include padding-bottom(100px);
+    }
+
+    .pho-py-lg, 
+    .pho-pt-lg {
+        @include padding-top(150px);
+    }
+
+    .pho-py-lg, 
+    .pho-pb-lg {
+        @include padding-bottom(150px);
+    }
+
+    .pho-py-xl, 
+    .pho-pt-xl{
+        @include padding-top(200px);
+    }
+
+    .pho-py-xl, 
+    .pho-pb-xl{
+        @include padding-bottom(200px);
+    }
+
+    .pho-py-xxl, 
+    .pho-pt-xxl{
+        @include padding-top(250px);
+    }
+
+    .pho-py-xxl, 
+    .pho-pb-xxl{
+        @include padding-bottom(250px);
     }
 }

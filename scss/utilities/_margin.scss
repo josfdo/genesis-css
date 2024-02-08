@@ -3,8 +3,8 @@
 $value: $spacing-level-one;
 
 $margin-x:(
-    me: "margin-right",
-    ms: "margin-left"
+    ms: "margin-inline-start",
+    me: "margin-inline-end"
 );
 
 .m-auto {
@@ -30,23 +30,22 @@ $margin-x:(
     
     .mx-#{$i},
     .ms-#{$i}{
-        margin-left: $i * $value !important;
+        margin-inline-start: $i * $value !important;
     }
     
     .mx-#{$i},
     .me-#{$i}{
-        margin-right: $i * $value !important;
+        margin-inline-end: $i * $value !important;
     }
     
-
     .my-#{$i},
     .mt-#{$i}{
-        margin-top: $i * $value !important;
+        margin-block-start: $i * $value !important;
     }
     
     .my-#{$i},
     .mb-#{$i}{
-        margin-bottom: $i * $value !important;
+        margin-block-end: $i * $value !important;
     }
 } 
 
@@ -60,7 +59,6 @@ $margin-x:(
 .my-sm, .mb-sm {
     @include margin-bottom(50px !important);
 }
-
 
 .my-md, .mt-md {
     @include margin-top(100px !important);
@@ -78,16 +76,282 @@ $margin-x:(
     @include margin-bottom(150px !important);
 }
 
-// Clear margins in breakpoint
+// Laptop
+
+@include breakpoint-max(lap) {
+
+    .lap-my-0 {
+        margin-block: 0 !important;
+    }
+
+    .lap-mx-0 {
+        margin-inline: 0 !important;
+    }
+
+    @for $i from 0 through 5 {
+
+        .lap-m-#{$i} {
+            margin: $i * $value !important;
+        }
+        
+        .lap-mx-#{$i},
+        .lap-ms-#{$i} {
+            margin-inline-start: $i * $value !important;
+        }
+        
+        .lap-mx-#{$i},
+        .lap-me-#{$i} {
+            margin-inline-end: $i * $value !important;
+        }
+        
+        .lap-my-#{$i},
+        .lap-mt-#{$i} {
+            margin-block-start: $i * $value !important;
+        }
+        
+        .lap-my-#{$i},
+        .lap-mb-#{$i} {
+            margin-block-end: $i * $value !important;
+        }
+    } 
+
+    .lap-my-sm, 
+    .lap-mt-sm {
+        @include margin-top(50px !important);
+    }
+    
+    .lap-my-sm, 
+    .lap-mb-sm {
+        @include margin-bottom(50px !important);
+    }
+    
+    .lap-my-md, 
+    .lap-mt-md {
+        @include margin-top(100px !important);
+    }
+    
+    .lap-my-md, 
+    .lap-mb-md {
+        @include margin-bottom(100px !important);
+    }
+    
+    .lap-my-lg, 
+    .lap-mt-lg {
+        @include margin-top(150px !important);
+    }
+    
+    .lap-my-lg, 
+    .lap-mb-lg {
+        @include margin-bottom(150px !important);
+    }    
+}
+
+// Tablet
 
 @include breakpoint-max(tab) {
-    .mobile-device-my-0, .tab-my-0 {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+
+    .tab-my-0 {
+        margin-block: 0 !important;
     }
 
-    .mobile-device-mx-0, .tab-mx-0 {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+    .tab-mx-0 {
+        margin-inline: 0 !important;
     }
+
+    @for $i from 0 through 5 {
+
+        .tab-m-#{$i} {
+            margin: $i * $value !important;
+        }
+        
+        .tab-mx-#{$i},
+        .tab-ms-#{$i} {
+            margin-inline-start: $i * $value !important;
+        }
+        
+        .tab-mx-#{$i},
+        .tab-me-#{$i} {
+            margin-inline-end: $i * $value !important;
+        }
+        
+        .tab-my-#{$i},
+        .tab-mt-#{$i} {
+            margin-block-start: $i * $value !important;
+        }
+        
+        .tab-my-#{$i},
+        .tab-mb-#{$i} {
+            margin-block-end: $i * $value !important;
+        }
+    } 
+
+    .tab-my-sm, 
+    .tab-mt-sm {
+        @include margin-top(50px !important);
+    }
+    
+    .tab-my-sm, 
+    .tab-mb-sm {
+        @include margin-bottom(50px !important);
+    }
+    
+    .tab-my-md, 
+    .tab-mt-md {
+        @include margin-top(100px !important);
+    }
+    
+    .tab-my-md, 
+    .tab-mb-md {
+        @include margin-bottom(100px !important);
+    }
+    
+    .tab-my-lg, 
+    .tab-mt-lg {
+        @include margin-top(150px !important);
+    }
+    
+    .tab-my-lg, 
+    .tab-mb-lg {
+        @include margin-bottom(150px !important);
+    }    
+}
+
+// Phablet
+
+@include breakpoint-max(pha) {
+
+    .pha-my-0 {
+        margin-block: 0 !important;
+    }
+
+    .pha-mx-0 {
+        margin-inline: 0 !important;
+    }
+
+    @for $i from 0 through 5 {
+
+        .pha-m-#{$i} {
+            margin: $i * $value !important;
+        }
+        
+        .pha-mx-#{$i},
+        .pha-ms-#{$i} {
+            margin-inline-start: $i * $value !important;
+        }
+        
+        .pha-mx-#{$i},
+        .pha-me-#{$i} {
+            margin-inline-end: $i * $value !important;
+        }
+        
+        .pha-my-#{$i},
+        .pha-mt-#{$i} {
+            margin-block-start: $i * $value !important;
+        }
+        
+        .pha-my-#{$i},
+        .pha-mb-#{$i} {
+            margin-block-end: $i * $value !important;
+        }
+    }
+    
+    .pha-my-sm, 
+    .pha-mt-sm {
+        @include margin-top(50px !important);
+    }
+    
+    .pha-my-sm, 
+    .pha-mb-sm {
+        @include margin-bottom(50px !important);
+    }
+    
+    .pha-my-md, 
+    .pha-mt-md {
+        @include margin-top(100px !important);
+    }
+    
+    .pha-my-md, 
+    .pha-mb-md {
+        @include margin-bottom(100px !important);
+    }
+    
+    .pha-my-lg, 
+    .pha-mt-lg {
+        @include margin-top(150px !important);
+    }
+    
+    .pha-my-lg, 
+    .pha-mb-lg {
+        @include margin-bottom(150px !important);
+    }    
+}
+
+// Phone
+
+@include breakpoint-max(pho) {
+
+    .pho-my-0 {
+        margin-block: 0 !important;
+    }
+
+    .pho-mx-0 {
+        margin-inline: 0 !important;
+    }
+
+    @for $i from 0 through 5 {
+
+        .pho-m-#{$i} {
+            margin: $i * $value !important;
+        }
+        
+        .pho-mx-#{$i},
+        .pho-ms-#{$i} {
+            margin-inline-start: $i * $value !important;
+        }
+        
+        .pho-mx-#{$i},
+        .pho-me-#{$i} {
+            margin-inline-end: $i * $value !important;
+        }
+        
+        .pho-my-#{$i},
+        .pho-mt-#{$i} {
+            margin-block-start: $i * $value !important;
+        }
+        
+        .pho-my-#{$i},
+        .pho-mb-#{$i} {
+            margin-block-end: $i * $value !important;
+        }
+    } 
+
+    .pho-my-sm, 
+    .pho-mt-sm {
+        @include margin-top(50px !important);
+    }
+    
+    .pho-my-sm, 
+    .pho-mb-sm {
+        @include margin-bottom(50px !important);
+    }
+    
+    .pho-my-md, 
+    .pho-mt-md {
+        @include margin-top(100px !important);
+    }
+    
+    .pho-my-md, 
+    .pho-mb-md {
+        @include margin-bottom(100px !important);
+    }
+    
+    .pho-my-lg, 
+    .pho-mt-lg {
+        @include margin-top(150px !important);
+    }
+    
+    .pho-my-lg, 
+    .pho-mb-lg {
+        @include margin-bottom(150px !important);
+    }    
 }

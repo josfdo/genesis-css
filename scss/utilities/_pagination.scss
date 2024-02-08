@@ -3,55 +3,120 @@
   padding: 0;
   margin: 2px 0;
   list-style-type: none;
-  border-radius: $bttn-radius;
+  border-radius: 0;
 
   .pagination-item,
-  .pagination-control {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+  .pagination-control,
+  .pagination-item-selected,
+  .pagination-control-selected {
+    padding: 0.5rem 0;
   }
 
-  .pagination-control {
-    &:first-child {
-      border-radius: $bttn-radius 0 0 $bttn-radius;
-    }
-    &:last-child {
-      border-radius: 0 $bttn-radius $bttn-radius 0;
-    }
+  .pagination-link {
+    padding: .5rem .75rem;
+  }
+
+  @include breakpoint-max(pha) {
+    .pagination-link {
+        padding: .5rem 1rem;
+    }    
   }
 }
 
-// Effects hover
+// Background color (Cloud)
 
-.pagination-bg-hover {
+.pagination-bg {
+  border: 1px solid $button-check;
+  background-color: $button-check;
 
   .pagination-item,
   .pagination-control {
-    transition: background-color .3s;
-    
+
     &:hover {
-      background-color: rgba(#8c8c8c, 0.5);
+      color: #006BD6;
+      background-color: #fefefe;
+    }
+  }  
+  
+  .pagination-item-selected,
+  .pagination-control-selected {
+
+    &:hover {
+      background-color: transparent;
     }
   }
-
 }
+
+// Pagination border radius
+
+.pagination-radius {
+  border-radius: 0.3125rem;
+
+  .pagination-control,
+  [class*=".pagination-control-"] {
+      &:first-child {
+        border-radius: $bttn-radius-child 0 0 $bttn-radius-child;
+      }
+      &:last-child {
+        border-radius: 0 $bttn-radius-child $bttn-radius-child 0;
+      }
+  }
+}
+
+// Pagination bolder 
 
 .pagination-bold-hover {
 
-  .pagination-item,
-  .pagination-control {
+  .caret-left {
+    border-right-color: rgba(56,70,81, .7);
+  }
+
+  .caret-right {
+    border-left-color: rgba(56,70,81, .7);
+  }
+
+  .pagination-link {
+    &:hover {
+      text-shadow: 0 0 1px rgba(0, 0, 0, 1);
+    }
 
     &:hover {
-      font-weight: bolder;
+      .caret-left {
+        border-right-color: initial;
+      }
+
+      .caret-right {
+        border-left-color: initial;
+      }
     }
   }
 
-  .pagination-control {
-    &:hover {
-      opacity: .5;
-      box-shadow: none;
+  .pagination-item-selected,
+  .pagination-control-selected {
+
+    .caret-left {
+      border-right-color: initial;
+    }
+  
+    .caret-right {
+      border-left-color: initial;
+    }
+
+    .pagination-link {
+      &:hover {
+        text-shadow: none;
+      }
+  
+      &:hover {
+        .caret-left {
+          border-right-color: initial;
+        }
+  
+        .caret-right {
+          border-left-color: initial;
+        }
+      }
     }
   }
 }
-
 

@@ -1,19 +1,19 @@
 // Border width
 
 .brd-1 {
-    border-width: 1px;
+    border-width: 1px !important;
 }
 
 .brd-2 {
-    border-width: 2px;
+    border-width: 2px !important;
 }
 
 .brd-3 {
-    border-width: 3px;
+    border-width: 3px !important;
 }
 
 .brd-1, .brd-2, .brd-3 {
-    border-color: $grey;
+    border-color: $border-color-default;
     border-style: solid;
 }
 
@@ -33,7 +33,7 @@
 // Radius
 
 .radius {
-    border-radius: $bttn-radius;
+    border-radius: $bttn-radius-child;
 }
 
 .radius-1 {
@@ -51,7 +51,7 @@
 // Radius start
 
 .radius-start {
-    border-radius: $bttn-radius 0 0 $bttn-radius;
+    border-radius: $bttn-radius-child 0 0 $bttn-radius-child;
 }
 
 .radius-start-1 {
@@ -69,7 +69,7 @@
 // Radius end
 
 .radius-end {
-    border-radius: 0 $bttn-radius $bttn-radius 0;
+    border-radius: 0 $bttn-radius-child $bttn-radius-child 0;
 }
 
 .radius-end-1 {
@@ -87,7 +87,7 @@
 // Radius top
 
 .radius-top {
-    border-radius: $bttn-radius $bttn-radius 0 0;
+    border-radius: $bttn-radius-child $bttn-radius-child 0 0;
 }
 
 .radius-top-1 {
@@ -105,7 +105,7 @@
 // Radius bottom
 
 .radius-bottom {
-    border-radius: 0 0 $bttn-radius $bttn-radius;
+    border-radius: 0 0 $bttn-radius-child $bttn-radius-child;
 }
 
 .radius-bottom-1 {
@@ -124,39 +124,6 @@
 
 .radius-none {
     border-radius: 0 !important;
-}
-
-// Border group 
-
-.brd-group, .brd-group-middle, .brd-group-full {
-    border: 1px solid $grey;
-
-    .brd {
-        display: inline-block;
-        width: 100%;
-        padding: .5rem 1rem;
-        border-bottom: 1px solid $grey;
-
-        :first-child {
-            border-top: 0;
-        }
-    }
-
-    :last-child {
-        .brd {
-            border-bottom: 0;
-        }
-    }
-}
-
-.brd-group {
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
-}
-
-.brd-group-middle {
-    border-width: 0 0 0 0;
 }
 
 // Circles

@@ -5,32 +5,54 @@
 
     .dropdown-content {
         min-width: 200px;
-        padding: .5rem;
+        padding-block: .5rem;
+        margin: 0;
+        color: $color-global-text;
         white-space: wrap;
         position: absolute;
         z-index: 1020;
-        border-radius: $bttn-radius;
         box-sizing: border-box;
         background-color: #fff;
         display: none;
-        @include box-shadow(rgba(0,0,0,.1));
-        border: 1px solid rgba(0, 0, 0, .1);
+        @include box-shadow(rgba(0, 0, 0, .1));
+        border-radius: $bttn-radius-child;
 
-        .item {
+        .dropdown-item {
             width: 100%;
-            padding: .5rem;
+            padding-block: 0.375rem;
+            margin: 0;
             text-align: left;
-            color: inherit;
         }
 
-        .multi-level {
-        
-            .multi-level-content {
-                position: relative;
-                padding-left: .5rem;
-                display: none;
-            }
+        // dropdown-content (submenu-content) child
+        .dropdown-content {
+            min-width: 0;
+            padding-block: 0;
+            border-radius: 0;
         }
+    }
+
+    .submenu-content {
+        position: relative;
+        border: 0;
+        display: none;
+        box-shadow: none;
+    }
+}
+
+//Drop-down hover
+
+.dropdown-hover {
+    .dropdown-item {
+        @include hover-item($hover-item);
+    }
+}
+
+//Drop-down opacity
+
+.dropdown-opacity {
+    .dropdown-item {
+        @include hover-opacity(.7);
     }
 }
 
@@ -38,10 +60,9 @@
 
 .dropdown-full {
     width: 100%;
-
     @include dropdown-full-width;
 }
-    
+
 // Full width breakpoints
 
 @include breakpoint-max(tab) {
@@ -49,7 +70,7 @@
         width: 100%;
         @include dropdown-full-width;
     }
-    
+
     .dropdown-mobile-collapse {
         .dropdown-content {
             position: relative;
@@ -108,5 +129,32 @@
         .dropdown-content {
             @include dropdown-breakpoint;
         }
+    }
+}
+
+// Setting for others uses
+
+.navbar {
+    .dropdown-content {
+        .dropdown-item {
+            padding-left: 1rem;
+        }
+    }
+}
+
+//Ajustes hover sobre fondo de color
+
+.dropdown-hover.bg-dark,
+.dropdown-hover.bg-bunker {
+    .dropdown-item {
+        @include hover-item($black-tuna);
+    }
+}
+
+
+.dropdown-hover.bg-tuna,
+.dropdown-hover.bg-charade{
+    .dropdown-item {
+        @include hover-item($dark);
     }
 }

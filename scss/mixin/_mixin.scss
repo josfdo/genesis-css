@@ -1,3 +1,35 @@
+// Table mark
+
+@mixin table-mark($bg-color) {
+
+    tbody,
+    tfoot {
+
+        tr,
+        th,
+        td {
+            &:hover {
+                color: #000;
+                background-color: rgba($bg-color, .1) !important;
+            }
+        }
+    }
+}
+
+// Table actions
+
+@mixin table-actions-align-x($text-aling) {
+    th:last-child {
+        width: 100px;
+        text-align: $text-aling;
+    }
+
+    td:last-child {
+        text-align: $text-aling;
+        white-space: nowrap;
+    }
+}
+
 @mixin box-shadow($color) {
     box-shadow: 0px 7px 20px $color;
 }
@@ -5,12 +37,13 @@
 // Clean list style
 
 @mixin reset-list-style {
-    
+
     margin: 0;
     padding: 0;
     list-style: none;
 
-    ul, ol {
+    ul,
+    ol {
         margin: 0;
         padding: 0;
         list-style: none;
@@ -38,9 +71,9 @@
     }
 }
 
-@mixin disabled-item($color) {
-    color: $color !important;
-    background-color: rgba($color, 0.2) !important;
+@mixin disabled-item {
+    color: $disabled-text !important;
+    background-color: $disabled-background !important;
     pointer-events: none;
 }
 
@@ -50,31 +83,28 @@
     color: #fff !important;
     background-color: $color !important;
 
+    &:focus-visible {
+        box-shadow: $focus-form-bxsh-offset rgba($color, .5) !important;
+    }
+
     &:hover {
-        background-color: $color - 20% !important;
-    } 
+        background-color: darken($color, 4%) !important;
+    }
 }
 
 // Button outline
 
 @mixin button-outline($color) {
     color: $color !important;
-    border: 1px solid rgba($color,.5) !important;
+    border: 1px solid $color !important;
 
-    &:hover {
-        border-color: $color !important;
+    &:focus-visible {
+        box-shadow: $focus-form-bxsh-offset rgba($color, .5) !important;
     }
-}
-
-// Button outline/solid
-
-@mixin button-outline-solid($bg-color, $color) {
-    color: $bg-color !important;
-    border: 1px solid rgba($bg-color,.5) !important;
 
     &:hover {
-        color: $color !important;
-        background-color: $bg-color !important;
+        color: rgba($color, .9) !important;
+        border-color: rgba($color, .7) !important;
     }
 }
 
@@ -89,10 +119,30 @@
 
 // Focus 
 
-@mixin focus-style {
+@mixin focus-style-form($color, $color-mobile-device) {
     outline: none;
-    border-color: #00b7eb;
-    box-shadow: 0 0 0 .1875rem #9bddff;
+    border-color: $color !important;
+
+        @include breakpoint-max(tab) {
+            border: 2px solid $color-mobile-device !important;
+        }
+        
+    box-shadow: none;
+    position: relative;
+}
+
+@mixin focus-checkbox-form {
+    outline: none;
+    outline: 1px solid $border-focus !important;
+    box-shadow: none;
+    position: relative;
+}
+
+// Focus button 
+
+@mixin focus-visible-button {
+    outline: none;
+    border-color: transparent;
     position: relative;
 }
 
@@ -115,6 +165,15 @@
 @mixin item($item-y, $item-x) {
     display: block;
     padding: $item-y $item-x;
+}
+
+//Item global properties
+
+@mixin item-global-properties {
+    display: block;
+    padding: .5rem $bttn-X-padding;
+    margin: 0.125rem;
+    white-space: nowrap;
 }
 
 // Switch ade in css
@@ -143,7 +202,8 @@
 // Hover item
 
 @mixin hover-item($hover-color) {
-    transition: background-color var(--transition-default);
+    transition: background-color $transition-default;
+
     &:hover {
         background-color: $hover-color;
         opacity: 1 !important;
@@ -153,7 +213,8 @@
 // Hover opacity
 
 @mixin hover-opacity($opacity) {
-    transition: opacity var(--transition-default);
+    transition: opacity $transition-default;
+
     &:hover {
         opacity: $opacity !important;
         background-color: transparent !important;
@@ -164,37 +225,31 @@
 // breakpoint mixin
 
 @mixin breakpoint-min($point) {
-    @if $point == pho-xs {
-        @media screen and (min-width: map-get($breakpoint, pho-xs)) {
-            @content;
-        }
-    }
-
-    @if $point == pho {
+    @if $point ==pho {
         @media screen and (min-width: map-get($breakpoint, pho)) {
             @content;
         }
     }
 
-    @if $point == pha {
+    @if $point ==pha {
         @media screen and (min-width: map-get($breakpoint, pha)) {
             @content;
         }
     }
 
-    @if $point == tab {
+    @if $point ==tab {
         @media screen and (min-width: map-get($breakpoint, tab)) {
             @content;
         }
     }
 
-    @if $point == lap {
+    @if $point ==lap {
         @media screen and (min-width: map-get($breakpoint, lap)) {
             @content;
         }
     }
 
-    @if $point == des {
+    @if $point ==des {
         @media screen and (min-width: map-get($breakpoint, des)) {
             @content;
         }
@@ -202,37 +257,31 @@
 }
 
 @mixin breakpoint-max($point) {
-    @if $point == pho-xs {
-        @media screen and (max-width: map-get($breakpoint, pho-xs)) {
-            @content;
-        }
-    }
-
-    @if $point == pho {
+    @if $point ==pho {
         @media screen and (max-width: map-get($breakpoint, pho)) {
             @content;
         }
     }
 
-    @if $point == pha {
+    @if $point ==pha {
         @media screen and (max-width: map-get($breakpoint, pha)) {
             @content;
         }
     }
 
-    @if $point == tab {
+    @if $point ==tab {
         @media screen and (max-width: map-get($breakpoint, tab)) {
             @content;
         }
     }
 
-    @if $point == lap {
+    @if $point ==lap {
         @media screen and (max-width: map-get($breakpoint, lap)) {
             @content;
         }
     }
 
-    @if $point == des {
+    @if $point ==des {
         @media screen and (max-width: map-get($breakpoint, des)) {
             @content;
         }

@@ -1,0 +1,234 @@
+// FORMS
+
+// Dark theme
+
+[data-gs-theme="form-dark"].form {
+    color: $white;
+
+    #{$form-item-label} {
+        color: $white;
+    }
+
+    #{$form-item-field} {
+        border-color: transparent !important;
+        color: $white !important;
+        caret-color: $white !important;
+        background-color: $black-bunker;
+
+        &::placeholder {
+            color: lighten($placeholder-color-text, 50%);
+            opacity: 1;
+        }
+
+        &:focus {
+            @include focus-style-form($grey, $grey); 
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="color"],
+    input[type="range"] {
+        &:focus {
+            outline: 1px solid $grey !important;
+        }
+    }
+
+    input[type="file"] {
+
+        &::file-selector-button {
+            color:#a4acb4;
+            border-inline-end: 1px solid $placeholder-color-text !important;
+            background-color: transparent;
+        }
+    }
+
+    .icon-file {
+
+        &::file-selector-button {
+            border-inline-end: 1px solid $placeholder-color-text !important;
+        }
+    }
+
+    input[type="submit"] {
+        color: $color-global-text;
+        border-color: transparent !important;
+    }
+
+    .form-item-message {
+        color: lighten($form-item-message, 20%) !important;
+    }
+
+    .form-item-message-primary {
+        color: #93e4f3 !important;
+    }
+
+    .form-item-message-positive {
+        color: rgb(43, 238, 194) !important;
+    }
+
+    .form-item-message-warning {
+        color: #d1d100 !important;
+    }
+
+    .form-item-message-negative {
+        color: #f30050 !important
+    }
+
+    @each $key, $value in $buttons {
+
+        .bttn-solid-#{$key} {
+            &:focus-visible {
+                box-shadow: $focus-form-bxsh-offset lighten($value, 20%) !important;
+            }
+        }
+    }
+
+    .bttn-solid-light {
+        &:focus-visible {
+            box-shadow: $focus-form-bxsh-offset rgba(255,255,255, .7) !important;
+        }
+    }
+
+    input[type="submit"].bttn-solid-light {
+        color: $color-global-text !important;
+    }
+}
+
+// Light theme
+
+[data-gs-theme="form-light"].form {
+    color: $color-global-text;
+
+    #{$form-item-field} {
+        border-color: transparent !important;
+        caret-color: $dark !important;
+        background-color: #e5ebf080;
+
+        &:focus {
+            @include focus-style-form(#a8b5c1, #a8b5c1); 
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="color"],
+    input[type="range"] {
+        &:focus {
+            outline: 1px solid #7c8c9a !important;
+        }
+    }
+
+    input[type="file"] {
+
+        &::file-selector-button {
+            color: #898d90;
+            border-inline-end: 1px solid $grey !important;
+        }
+    }
+
+    input[type="submit"] {
+        border-color: transparent !important;
+    }
+}
+
+// Border theme & Light theme
+
+[data-gs-theme="form-border-sky"].form, [data-gs-theme="form-border"].form {
+    color: $color-global-text;
+
+    #{$form-item-field} {
+   
+        border-inline: 0;
+        border-top: 0;
+        border-bottom-width: 2px !important;
+        border-radius: 0 !important;
+
+        &:focus {
+            border-bottom-color:darken(#8a9cac, 15%) !important;
+
+            @include breakpoint-max(tab) {
+                border-inline: 0 !important;
+                border-block-start: 0 !important;
+            }
+        }
+    }
+
+    input[type="file"] {
+
+        &::file-selector-button {
+            color: $dark;
+            border-inline-end: 0 !important;
+            border-radius: 0px !important;
+        }
+    }
+
+    textarea {
+        padding-inline: $bttn-X-padding;
+        background-color: $cloud !important;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="color"],
+    input[type="range"] {
+        &:focus {
+            outline: 2px solid #7c8c9a !important;
+            border-bottom: 0px !important;
+        }
+    }
+
+    .bttn, input[type="submit"] {
+        border-bottom: 0px;
+        border-color: transparent !important;
+        border-radius: $bttn-radius-child !important;
+    }
+}
+
+// Sky border
+
+[data-gs-theme="form-border-sky"].form {
+
+    #{$form-item-field} {
+
+        border-color: $primary-dark;
+
+        &:focus {
+            border-bottom-color: lighten($primary-dark, 25%) !important;
+
+            @include breakpoint-max(tab) {
+                border-inline: 0 !important;
+                border-block-start: 0 !important;
+            }
+        }
+    }
+
+    input[type="file"] {
+
+        &::file-selector-button {
+            color: #4277BD;
+            border-inline-end: 0 !important;
+            border-radius: 0px !important;
+        }
+    }
+
+    .icon-file {
+
+        &::file-selector-button {
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"%3E%3Cpath fill="%234277BD" opacity=".8" d="M19.31 12.051c.381 0 .69.314.69.7v4.918c-.006.67-.127 1.2-.399 1.594c-.328.476-.908.692-1.747.737l-15.903-.002c-.646-.046-1.168-.302-1.507-.777c-.302-.423-.446-.95-.444-1.558V12.75c0-.386.309-.7.69-.7c.38 0 .688.314.688.7v4.913c0 .333.065.572.182.736c.081.114.224.184.44.201l15.817.001c.42-.023.627-.1.655-.14c.084-.123.146-.393.15-.8V12.75c0-.386.308-.7.689-.7ZM9.99 0c.224 0 .423.108.549.276l4.281 4.308c.27.272.272.715.004.99a.682.682 0 0 1-.974.003l-3.171-3.189v9.643c0 .387-.308.7-.689.7a.694.694 0 0 1-.69-.7V2.383L6.172 5.574a.682.682 0 0 1-.89.076l-.085-.074a.707.707 0 0 1-.002-.989L9.49.207a.682.682 0 0 1 .404-.202h.011A.462.462 0 0 1 9.977 0h.013Z"%2F%3E%3C%2Fsvg%3E');
+        }
+    }
+
+    .icon-select {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32' height='32' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1024 1024'%3e%3cpath fill='%234277BD' d='M831.872 340.864L512 652.672L192.128 340.864a30.592 30.592 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.592 30.592 0 0 0-42.752 0z'%3e%3c/path%3e%3c/svg%3e");
+    }
+
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="color"],
+    input[type="range"] {
+        &:focus {
+            outline: 2px solid lighten($primary-dark, 30%) !important;
+        }
+    }
+}

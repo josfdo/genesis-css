@@ -2,32 +2,34 @@
   display: inline-block;
   padding: $bttn-Y-padding $bttn-X-padding;
   line-height: $bttn-line-height;
+
+  @include breakpoint-max(tab) {
+    line-height: 1.6;
+  }
+
   margin: $bttn-Y-margin $bttn-X-margin;
-  text-align: center;
   color: inherit;
   font-weight: 400;
+  text-align: center;
   text-decoration: none !important;
   cursor: pointer;
   user-select: none;
   border: 1px solid transparent;
-  border-radius: $bttn-radius;
+  border-radius: $bttn-radius-child;
   box-sizing: border-box;
-  transition: background-color .3s;
+  vertical-align: baseline;
 }
 
 .bttn-md {
-  padding: $bttn-md-Y-padding $bttn-X-padding;
+  padding: $bttn-md-Y-padding $bttn-md-X-padding !important;
+  font-size: 0.875rem;
 }
 
 .bttn-sm {
-  padding: $bttn-sm-Y-padding $bttn-sm-X-padding;
-  font-size: 13px;
-  line-height: 1;
-  border-radius: .1875em;
-}
-
-.pill {
-  border-radius: 624.9375rem;
+  padding: $bttn-sm-Y-padding $bttn-sm-X-padding !important;
+  font-size: 0.8125em;
+  line-height: 0.9375em;
+  border-radius: 0.1875rem;
 }
 
 .bttn-color {
@@ -35,119 +37,149 @@
   padding-bottom: .625rem;
 }
 
-.bttn-check {
-  padding: 0;
-  margin: 0;
+// Buttons solid and outline colors.
 
-  input[type="radio"],
-  input[type="checkbox"] {
-    display: none;
-    position: absolute;
+@each $key, $value in $buttons {
+
+  .bttn-solid-#{$key} {
+    @include button-solid($value);
   }
 
-  input[type="radio"]:checked + label,
-  input[type="checkbox"]:checked + label {
-    color: #000;
-    background-color: $md-grey;
+  .bttn-brd-#{$key} {
+    @include button-outline($value);
   }
-
-  input:checked ~ .bttn-color {
-    outline: 3px solid #00b7eb;
-    outline-offset: 1px;
-  }
-
-}
-
-// Buttons solid colors.
-
-.bttn-dark {
-  @include button-solid($dark);
-}
-
-.bttn-primary {
-  @include button-solid($primary);
-}
-
-.bttn-positive {
-  @include button-solid($positive);
-}
-
-.bttn-negative {
-  @include button-solid($negative);
-}
-
-.bttn-light {
-  color: $dark;
-  border-color: $light - 5%;
-  background-color: $light;
-
-  &:hover {
-      background-color: $light - 5%;
-  }
-}
-
-// Buttons outline
-
-.bttn-brd-dark {
-  @include button-outline($dark);
-}
-
-.bttn-brd-primary {
-  @include button-outline($primary);
-}
-
-.bttn-brd-positive {
-  @include button-outline($positive);
-}
-
-.bttn-brd-negative {
-  @include button-outline($negative);
-}
-
-.bttn-brd-light {
-  @include button-outline($light);
-}
-
-// Buttons outline/solid
-
-.bttn-solid-dark {
-  @include button-outline-solid($dark, $white);
-}
-
-.bttn-solid-primary {
-  @include button-outline-solid($primary, $white);
-}
-
-.bttn-solid-positive {
-  @include button-outline-solid($positive, $white);
-}
-
-.bttn-solid-negative {
-  @include button-outline-solid($negative, $white);
 }
 
 .bttn-solid-light {
-  @include button-outline-solid($light, $black);
+  color: $dark !important;
+  border-color: darken(#f6f7fa, 1%);
+  background-color: $light-color;
+
+  &:hover {
+    background-color: rgb(240, 243, 247) !important;
+  }
+}
+
+// Focusable colors.
+
+[class*="bttn-"],
+[class*="bttn disabled"],
+[class*="bttn-notice-"],
+input[type="submit"] {
+  &:focus-visible {
+    outline: none;
+    border-color: transparent !important;
+    position: relative;
+  }
+}
+
+#{$bttn-focus-light} {
+  &:focus-visible {
+    box-shadow: $focus-form-bxsh-offset rgba(#c2c2c2, .8) !important;
+  }
 }
 
 // Disabled class
 
 .bttn:disabled,
 .disabled {
-  @include disabled-item(#b3b3b3);
+  @include disabled-item;
+
+  &:focus-visible {
+    box-shadow: $focus-form-bxsh-offset rgba(#b3b3b3, .5) !important;
+  }
+
   &:hover {
     background-color: transparent !important;
   }
 }
+
+// Buttons lighter colors
+
+@each $key, $value in $buttons-default {
+
+  .bttn-#{$key} {
+
+    color: map-get($buttons-default-text, $key) !important;
+    background-color: $value !important;
+
+    &:focus-visible {
+      box-shadow: $focus-form-bxsh-offset map-get($buttons-default-focus, $key) !important;
+    }
+
+    &:hover {
+      background-color: map-get($buttons-default-hover, $key) !important;
+    }
+  }
+}
+
+// Link style and combined use with buttons
+
+.bttn.link-style,
+.link-style {
+  color: $link-color-dark !important;
+  text-decoration: underline !important;
+}
+
+.bttn.link-style-hover,
+.link-style-hover {
+  color: $link-color-dark !important;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.bttn.link-style-opacity,
+.link-style-opacity {
+  opacity: 1 !important;
+  color: $link-color-dark !important;
+  text-decoration: none !important;
+
+  &:hover {
+    opacity: .7 !important;
+  }
+}
+
+.bttn.link-disabled,
+.link-disabled {
+  @include disabled-item;
+  background-color: transparent !important;
+}
+
+.bttn.link-disabled {
+  text-decoration: underline !important;
+}
+
+.bttn.link-light,
+.link-light {
+  color: $link-color-light !important;
+}
+
+// Link style group
+
+.link-style-opacity-group {
+  [href] {
+    opacity: 1 !important;
+    color: $link-color-dark !important;
+    text-decoration: none !important;
+
+    &:hover {
+      opacity: .7 !important;
+    }
+  }
+}
+
 
 // Button navbar menu and lines.
 
 .bttn-menu {
   width: 40px;
   padding: .25rem;
-  border-radius: $bttn-radius;
+  border-radius: $bttn-radius-child;
   vertical-align: sub;
-  
+
   .line {
     width: 100%;
     height: 1px;
@@ -168,195 +200,31 @@
 }
 
 .bttn-menu-white {
-  & > .line {
+  &>.line {
     background-color: $white;
   }
 }
 
 .bttn-menu-black {
-  & > .line {
-    background-color: $black;
+  &>.line {
+    background-color: $black-bunker;
   }
 }
 
 // Button navbar menu, lines activation.
 
-.bttn-menu-active .line:nth-child(1){
+.bttn-menu-active .line:nth-child(1) {
   width: 15px;
 }
 
-.bttn-menu-active .line:nth-child(3){
+.bttn-menu-active .line:nth-child(3) {
   width: 15px;
 }
-
-// Inline buttons and checkboxes buttons
-
-.bttn-group{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  .bttn-unified {
-    position: relative;
-    flex-grow: 1;
-    text-align: center;
- 
-
-    input[type="radio"]:checked + label,
-    input[type="checkbox"]:checked + label {
-      color: #000;
-      background-color: $md-grey;
-    }
-
-    & .bttn {
-      width: 100%;
-      margin: 0;
-      color: #485260;
-      border-radius: 0;
-      background-color: $light;
-    }
-
-  }
-
-  .bttn-align,.bttn-check {
-    flex-grow: 1;
-    margin-left: $bttn-Y-margin;
-    margin-right: $bttn-Y-margin;
-
-    & .bttn {
-      width: 100%;
-    }
-  }
-}
-
-.bttn-unified, .bttn-align, .bttn-check, .checkboxes-outline-bottom {
-
-  input[type="radio"],
-  input[type="checkbox"] {
-    display: none;
-    position: absolute;
-  }
-}
-
-// Checkboxes border bottom
-
-.checkboxes-outline-bottom {
-
-  & .bttn {
-    opacity: .7;
-    border-width: 0 0 1px 0;
-    border-radius: 0 !important;
-    background-color: transparent !important;
-   
-  }
-
-  input[type="radio"]:checked + label,
-  input[type="checkbox"]:checked + label {
-    border-color: $dark;
-    opacity: 1;
-  }
-
-}
-
-// Add border radius the ends of the first and last button.
-
-.bttn-group-radius {
-
-  .bttn-unified {
-    &:first-of-type {
-      & .bttn {
-        border-radius: $bttn-radius 0 0 $bttn-radius;
-      }
-    }
-
-    &:last-of-type {
-      & .bttn {
-        border-radius: 0 $bttn-radius $bttn-radius 0;
-      }
-    }
-  }
-}
-
-// 
-
-
-@each $key, $value in map-remove($buttons, "light") {
-
-  .checkboxes-solid-#{$key} {
-    & .bttn {
-      color: invert(#000) !important;
-      border-color: $value - 7% !important;
-      background-color: $value !important;
-    }
-
-    input:checked + label {
-      background-color: rgba($value,.7) !important;
-      color: invert(#000) !important;
-    }
-  }
-
-  .checkboxes-outline-#{$key} {
-
-    & .bttn {
-        color: $value !important;
-        border-color: $value - 10% !important;
-        background-color: white !important;
-    }
-
-    input:checked + label {
-        background-color: $value !important;
-        color: invert(#000) !important;
-    }
-  }
-}
-
-// Full colors
-
-@each $key, $value in $buttons {
-
-  .bttn-check {
-
-    input:checked ~ .bttn-#{$key}, 
-    input:checked ~ .bttn-brd-#{$key} {
-      color: #000 !important;
-      border-color: transparent !important;
-      background-color: $md-grey !important;
-    }
-  }
-
-}
-
-// Checkboxes outline white
-
-.checkboxes-outline-white {
-  & .bttn {
-    border-color: #fff !important
-  }
-}
-
-// Chekboxes outline bottom, excluded colors.
-
-@each $key, $value in map-remove($buttons, "light", "dark") {
-
-  .outline-bottom-#{$key} {
-
-    input[type="radio"]:checked + label,
-    input[type="checkbox"]:checked + label {
-      color: $value !important;
-      border-color: $value !important;
-      opacity: 1;
-    }
-  }
-
-}
-
 
 // Controls slide gallery
 
-.control-box-next, .control-box-prev {
+.control-box-next,
+.control-box-prev {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -377,49 +245,17 @@
 
 .control-box-prev {
   left: 0;
-  
+
   .control-prev {
     border-radius: 0 5px 5px 0;
   }
 }
 
-.control-next, .control-prev {
+.control-next,
+.control-prev {
   width: 100%;
   height: 70px;
   padding: 0 .25rem;
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, .3);
   backdrop-filter: blur(7px);
-}
-
-// Iconos
-
-.icon-close, .icon-navbar-toggle {
-  vertical-align: middle;
-  display: inline-block;
-  background-color: currentColor;
-  opacity: .7;
-  transition: opacity .3s;
-  
-  &:hover {
-      opacity: 1;
-  }
-}
-
-.icon-close {
-  width: 1.25rem;
-  height: 1.25rem;
-  @include breakpoint-max(tab) {
-      width: 1.5rem;
-      height: 1.5rem;
-  }
-
-  mask: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath d='M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z'%3e%3c/path%3e%3c/svg%3e")
-  center/cover;
-}
-
-.icon-navbar-toggle {
-  width: 32px;
-  height: 32px;
-  mask: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M16 5H0V4h16v1zm0 8H0v-1h16v1zm0-4.008H0V8h16v.992z"%2F%3E%3C%2Fsvg%3E')
-  center/cover;
 }

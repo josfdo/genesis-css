@@ -1,9 +1,9 @@
-.w-0 {
-    width: 0 !important;
-}
-
 .w-auto {
     width: auto !important;
+}
+
+.w-0 {
+    width: 0 !important;
 }
 
 // Widths percent.
@@ -26,40 +26,15 @@
 
 .w100 {
     width: 100% !important;
+    box-sizing: border-box;
+}
+
+.maxw100 {
     max-width: 100% !important;
     box-sizing: border-box;
 }
 
-// Heights percents
-
-.h100 {
-    height: 100% !important;
-}
-
-//Heights 50 > 100 
-
-.h-0 {
-    height: 0 !important;
-}
-
-@for $i from 5 through 10 {
-
-    .h-#{$i * 10}{
-        height: $i * 10px;
-    }
-}
-
-// Height. 200 > 500
-
-@for $i from 2 through 3 {
-
-    .h-#{$i * 100}{
-        height: $i * 100px;
-    }
-}
-
-
-// Widths pixels. 50 > 100
+// Max/min widths pixels. 50 > 100
 
 @for $i from 5 through 10 {
 
@@ -69,7 +44,7 @@
     }
 }
 
-// Widths pixels. 200 > 500
+// Max/min widths pixels. 200 > 500
 
 @for $i from 2 through 3 {
 
@@ -108,3 +83,16 @@
         width: 100% !important;
     }
 }
+
+// View port
+
+.vw-100 {
+    width: 100vw;
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+
+

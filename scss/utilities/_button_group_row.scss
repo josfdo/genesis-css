@@ -1,0 +1,223 @@
+.button-group-row,
+.button-group-expand {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    border-radius: $bttn-radius-parent;
+
+    .button-group-item,
+    .button-group-item-check {
+        list-style-type: none !important;
+        background-color: $white;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+
+        &:first-child {
+            border-radius: $bttn-radius-parent 0 0 $bttn-radius-parent !important;
+        }
+
+        &:last-child {
+            border-radius: 0 $bttn-radius-parent $bttn-radius-parent 0 !important;
+        }
+
+        #{$bttn-default} {
+            margin-block: 0;
+            color: $color-text-button-group !important;
+            border-inline-start: 0;
+            border-inline-color: $border-color-default;
+            border-inline-end-color: $border-color-default;
+            border-block-color: $border-color-default;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            background-color: transparent !important;
+
+            :nth-child(1n) {
+                margin-inline: 4px;
+            }
+        }
+
+        &:first-child {
+            #{$bttn-default} {
+                border-inline-start: 1px solid $border-color-default;
+                border-radius: $bttn-radius-child 0 0 $bttn-radius-child !important;
+            }
+        }
+
+        &:last-child {
+
+            #{$bttn-default} {
+                border-radius: 0 $bttn-radius-child $bttn-radius-child 0 !important;
+            }
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+            overflow: hidden;
+        }
+
+        .bttn.disabled {
+            background-color: $disabled-background !important;
+        }
+    }
+
+    .button-group-item-check {
+        padding: 0.125rem;
+        background-color: $button-check;
+
+        #{$bttn-default} {
+            border: 0;
+            border-radius: $bttn-radius-child !important;
+        }
+
+        &:first-child,
+        &:last-child {
+            #{$bttn-default} {
+                border-inline-start: 0;
+                border-radius: $bttn-radius-child !important;
+            }
+        }
+
+        .bttn.active,
+        input[type="checkbox"]:checked+label,
+        input[type="radio"]:checked+label {
+            color: $link-color-dark !important;
+            background-color: $white !important;
+        }
+    }
+}
+
+.button-group-expand {
+    width: auto;
+    padding: 1px;
+    flex-wrap: wrap;
+    border-radius: $bttn-radius-parent;
+
+    .button-group-item {
+        padding: 2px;
+        flex-grow: 1;
+        border: 0;
+        background-color: transparent;
+
+        #{$bttn-default} {
+            width: 100%;
+            flex-grow: 1;
+            justify-content: center;
+            border: transparent !important;
+            border-radius: $bttn-radius-child;
+            background-color: $button-check !important;
+        }
+
+        &:first-child,
+        &:last-child {
+            #{$bttn-default} {
+                border-inline-start: 0;
+                border-radius: $bttn-radius-child !important;
+            }
+        }
+    }
+}
+
+.button-group-row.radius-none {
+
+    .button-group-item {
+
+        #{$bttn-default} {
+            border-radius: 0 !important;
+        }
+    }
+}
+
+@each $key, $value in $buttons {
+
+    .button-group-row,
+    .button-group-expand {
+        .button-group-item {
+
+            .bttn-solid-#{$key}.active,
+            input[type="checkbox"]:checked~.bttn-solid-#{$key},
+            input[type="radio"]:checked~.bttn-solid-#{$key} {
+
+                margin-inline-start: -1px;
+                color: #fff !important;
+                border-block-color: lighten($value, 5%) !important;
+                border-inline: 1px solid lighten($value, 7%) !important;
+                background-color: $value !important;
+            }
+
+            &:first-child {
+
+                .bttn-solid-#{$key}.active,
+                input[type="checkbox"]:checked~.bttn-solid-#{$key},
+                input[type="radio"]:checked~.bttn-solid-#{$key} {
+                    margin-inline-start: 0;
+                    border-inline-start-color: lighten($value, 7%) !important;
+                }
+            }
+        }
+    }
+}
+
+@each $key, $value in $buttons-default {
+
+    $text-color: map-get($buttons-default-text, $key);
+    $darkened-border-color: darken($value, 20%);
+
+    .button-group-row,
+    .button-group-expand {
+        .button-group-item {
+
+            .bttn-#{$key}.active,
+            input[type="checkbox"]:checked~.bttn-#{$key},
+            input[type="radio"]:checked~.bttn-#{$key} {
+
+                margin-inline-start: -1px;
+                color: $text-color !important;
+                border-block-color: $darkened-border-color !important;
+                border-inline: 1px solid $darkened-border-color !important;
+                background-color: $value !important;
+            }
+
+            &:first-child {
+
+                .bttn-#{$key}.active,
+                input[type="checkbox"]:checked~.bttn-#{$key},
+                input[type="radio"]:checked~.bttn-#{$key} {
+                    margin-inline-start: 0;
+                    border-inline-start-color: $darkened-border-color !important;
+                }
+            }
+        }
+    }
+}
+
+// Ajustes
+
+.button-group-expand {
+    .button-group-item {
+
+        .bttn.active,
+        input[type="checkbox"]:checked~.bttn,
+        input[type="radio"]:checked~.bttn {
+            border: 0 !important;
+            margin-inline: 0;
+        }
+    }
+}
+
+.button-group-row,
+.button-group-expand {
+
+    .button-group-item,
+    .button-group-item-check {
+
+        input[type="radio"]:focus-visible+label,
+        input[type="checkbox"]:focus-visible+label {
+            outline: 1px solid $border-focus;
+        }
+    }
+}

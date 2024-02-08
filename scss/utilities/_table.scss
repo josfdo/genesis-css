@@ -1,23 +1,29 @@
-.table, .table-basic, .table-light, .table-dark {
+.table, .table-basic, .table-striped, .table-light, .table-dark, .table-full-brd {
     width: 100%;
     border-collapse: collapse;
     color: inherit;
     font-size: 15px;
     text-align: left;
     border-spacing: 1px;
-    background-color: #fff;
+    background-color: $white;
 
     caption {
         text-align: left;
-        padding: 10px 0;
+        padding: .5rem 0;
     }
 
     th, td {
-        padding: 1rem;
+        padding: .5rem 1rem;
     }
 
     th {
         font-weight: 500;
+    }
+
+    tbody {
+        th {
+            vertical-align: top;
+        }
     }
 
     .bttn {
@@ -27,31 +33,13 @@
     }
 }
 
-// Reduce header space and rows
-
-.t-sm {
-    th, td {
-        padding: .5rem 1rem;
-    }
-}
-
-// Aligned from the top for all rows.
-
-.t-align-top {
-    tbody {
-        tr {
-            vertical-align: top;
-        }
-    }
-}
-
 // Border for table rows
 
 .table-basic, .table-light, .table-dark {
     tbody {
     
         tr {
-            border-bottom: 1px solid $md-grey;
+            border-bottom: 1px solid $border-color-default;
         }
     }
 }
@@ -60,7 +48,7 @@
 
 .table-basic {
     thead {
-        border-block-end: 1px solid $dark;
+        border-bottom: 1px solid $dark;
     }
 }
 
@@ -69,7 +57,7 @@
 .table-light {
 
     thead {
-        background-color: $light;
+        background-color: $light-color;
     }
 
     tbody {
@@ -100,26 +88,81 @@
 
 // Generate border full 
  
-.t-full-brd {
-    border: 1px solid $md-grey !important;
+.table-full-brd {
+    border: 1px solid $border-color-default !important;
 
     td, th {
-        border: 1px solid $md-grey !important;
+        border: 1px solid $border-color-default !important;
     }
 }
 
 // Highlight a row with a highlight color
 
-.t-mark {
+.table-mark {
+    @include table-mark(#167db1);
+}
+
+// Table responsive
+
+.container-table-responsive {
+    overflow-x: auto;
+}
+
+@include breakpoint-max(tab) {
+    .container-table-responsive {
+        @include scrollbar-hidden;
+    }
+}
+
+// White-space property table
+
+.table-thead-nowrap {
+    th {
+        white-space: nowrap;
+    }
+}
+
+.table-tbody-nowrap {
+    td {
+        white-space: nowrap;
+    }
+}
+
+// Table actions
+
+.table-actions {
+    @include table-actions-align-x(center);
+}
+
+.table-actions-left {
+    @include table-actions-align-x(left);
+}
+
+.table-actions-right {
+    @include table-actions-align-x(right);
+}
+
+// Table data multimedia
+
+.multimedia-td-sm {
+    max-width: 60px;
+    max-height: 80px;
+}
+
+.multimedia-td-md {
+    max-width: 70px;
+    max-height: 90px;
+}
+
+// Table striped
+
+.table-striped {
+    thead {
+        border-bottom: 1px solid $grey;
+    }
     tbody {
-
-        tr, th, td {
-            transition: background-color .3s;
-            &:hover {
-
-                color: $dark;
-                background-color: rgba($primary,.1);
-            }
+        tr:nth-child(even) {
+            background-color: #f6f7fa;
         }
     }
 }
