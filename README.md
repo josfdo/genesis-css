@@ -39,9 +39,10 @@ El orden en el que vas a encontrar los archivos es el siguiente:
 ```
 genesis-css/
 ├── css/
+|   └── genesis.css
 │   └── normalize.css
 ├── js/
-│   └── genesis-jq.js
+│   └── genesis.js
 ├── scss/
 │    ├── mixin/      
 │    |   └── mixin.scss
@@ -51,8 +52,6 @@ genesis-css/
 │    |   └── variables.scss
 │    └── vendor/
 │        └── rfs.scss
-├── genesis.css
-├── genesis.css.map
 └── genesis.scss
 ```
 ### - Estructura de los archivos para producción
@@ -65,5 +64,5 @@ genesis-css/
 │   └── normalize.css
 │   └── genesis.css
 └── js/
-    └── genesis-jq.js
+    └── genesis.js
 ```
