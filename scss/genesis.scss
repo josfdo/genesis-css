@@ -11,9 +11,10 @@ Copyright Genesis CSS 2022
 @import "variables/variables";
 @import "mixin/mixin";
 
+@import "themes/form";
+
 @import "utilities/settings";
 @import "utilities/reset_class";
-
 @import "utilities/item";
 @import "utilities/grid";
 @import "utilities/form";
@@ -44,4 +45,3 @@ Copyright Genesis CSS 2022
 @import "utilities/gallery";
 @import "utilities/events_js";
 @import "utilities/utilities";
-@import "utilities/themes";
