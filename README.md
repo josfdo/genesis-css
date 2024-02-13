@@ -65,4 +65,5 @@ genesis-css/
 │   └── genesis.css
 └── js/
     └── genesis.js
+    └── jquery-3.6.0.js
 ```
