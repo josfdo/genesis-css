@@ -460,8 +460,12 @@ $(document).ready(function () {
             const messageError = `Modal: elemento con ID "${targetValue.substring(1)}" no encontrado.`;
 
             if(modalElement) {
-                $(targetValue).show().focus();
+                $(targetValue).fadeIn().find('[tabindex]:not([tabindex="-1"])').first().focus();
+
                 addAttrStyleScrollSpacer();
+                $(".modal-backdrop").attr("role", "dialog");
+                $(".modal-backdrop").attr("aria-modal", "true");
+
 
                 $(".modal").on('click', (e) => {
                     e.stopPropagation();
@@ -471,11 +475,15 @@ $(document).ready(function () {
                 console.error(messageError);
             }
 
-            $(".close-modal").on('click', () => {
+            $(".close-modal").off('click').on('click', () => {
+                $(".modal-backdrop").removeAttr("role", "dialog");
+                $(".modal-backdrop").removeAttr("aria-modal", "true");
 
-                $(".modal-backdrop").hide();
-                removeAttrStyleScrollSpacer();
-                removeAttrStyleElement(".modal-backdrop");
+                $(".modal-backdrop").fadeOut(400, function(){
+                    removeAttrStyleScrollSpacer();
+                    removeAttrStyleElement(".modal-backdrop");
+
+                });
             });
 
             escKey(".close-modal");
@@ -484,7 +492,7 @@ $(document).ready(function () {
         });
     });
 
-    /*Modal etiqueta "dialog")*/
+    /*Modal etiqueta "dialog"*/
     $(".open-dialog").each(function() {
         $(this).on("click", function(e){
             const targetValue = $(this).data("gs-target");
